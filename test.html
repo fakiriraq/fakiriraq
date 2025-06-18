@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر الأجهزة الكهربائية | لوحة تحكم</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3498db;
-            --secondary: #2ecc71;
+            --primary: #ffffff;
+            --secondary: #ffffff;
             --dark: #2c3e50;
             --light: #ecf0f1;
             --danger: #e74c3c;
@@ -22,11 +23,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Almarai', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            background: gray;
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             color: var(--dark);
@@ -57,6 +58,18 @@
             top: 0;
             z-index: 100;
             border-bottom: 3px solid var(--dollar);
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         
         .header-content {
@@ -74,26 +87,32 @@
         }
         
         .logo img {
-            height: 50px;
+            height: 100px;
             width: auto;
-            border-radius: 50%;
-            border: 2px solid white;
+        
+           
+            animation: pulse 2s infinite;
         }
         
-        .logo h1 {
-            font-size: 1.5rem;
-            background: linear-gradient(to right, var(--primary), var(--dollar));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
+       
         .contact-info {
             text-align: center;
             background-color: var(--warning);
             padding: 5px 0;
             font-weight: bold;
             border-radius: 0 0 10px 10px;
+            animation: colorShift 3s infinite alternate;
+        }
+        
+        @keyframes colorShift {
+            0% { background-color: var(--warning); }
+            100% { background-color: #e67e22; }
         }
         
         /* Navigation */
@@ -104,6 +123,18 @@
             margin: 20px 0;
             box-shadow: var(--shadow);
             border: 1px solid var(--dollar);
+            animation: fadeIn 0.7s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .categories {
@@ -122,6 +153,8 @@
             transition: all 0.3s;
             font-weight: 500;
             border: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
         }
         
         .category-btn:hover, .category-btn.active {
@@ -129,6 +162,22 @@
             color: white;
             transform: translateY(-3px);
             box-shadow: var(--shadow);
+        }
+        
+        .category-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+        }
+        
+        .category-btn:hover::after {
+            transform: translateX(100%);
+            transition: transform 0.6s ease;
         }
         
         /* Product Grid */
@@ -147,6 +196,16 @@
             transition: all 0.3s;
             position: relative;
             border: 1px solid var(--dollar);
+            animation: cardAppear 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .product-card:hover {
@@ -183,6 +242,7 @@
             margin-bottom: 10px;
             color: var(--dark);
             text-align: center;
+            font-weight: 700;
         }
         
         .product-info p {
@@ -222,11 +282,30 @@
             justify-content: center;
             font-size: 1.2rem;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
         
         .add-to-cart:hover {
             transform: scale(1.2);
             background-color: #219653;
+            box-shadow: 0 0 15px rgba(39, 174, 96, 0.6);
+        }
+        
+        .add-to-cart::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+        
+        .add-to-cart:hover::after {
+            transform: rotate(30deg) translate(100%, 100%);
         }
         
         /* Cart Section */
@@ -237,6 +316,18 @@
             margin-top: 30px;
             box-shadow: var(--shadow);
             border: 1px solid var(--dollar);
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .cart-section h2 {
@@ -261,6 +352,12 @@
             align-items: center;
             padding: 10px 0;
             border-bottom: 1px solid var(--light);
+            transition: all 0.3s;
+        }
+        
+        .cart-item:hover {
+            background-color: rgba(236, 240, 241, 0.3);
+            border-radius: 8px;
         }
         
         .cart-item-info {
@@ -312,6 +409,7 @@
         .quantity-btn:hover {
             background-color: var(--dollar);
             color: white;
+            transform: scale(1.1);
         }
         
         .quantity {
@@ -335,6 +433,7 @@
         
         .remove-btn:hover {
             transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
         }
         
         .cart-total {
@@ -365,6 +464,8 @@
             gap: 8px;
             transition: all 0.3s;
             font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
         }
         
         .clear-cart {
@@ -374,6 +475,7 @@
         
         .clear-cart:hover {
             background-color: #dcdde1;
+            transform: translateY(-3px);
         }
         
         .checkout {
@@ -385,6 +487,22 @@
             background: #219653;
             transform: translateY(-3px);
             box-shadow: var(--shadow);
+        }
+        
+        .cart-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+        
+        .cart-btn:hover::after {
+            transform: rotate(30deg) translate(100%, 100%);
         }
         
         /* WhatsApp Floating Button */
@@ -403,19 +521,20 @@
             font-size: 2rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             z-index: 99;
-            animation: pulse 2s infinite;
+            animation: pulse 2s infinite, float 3s ease-in-out infinite;
             transition: all 0.3s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
         
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            animation: none;
         }
         
         /* Admin Controls */
@@ -427,6 +546,7 @@
             box-shadow: var(--shadow);
             border: 2px solid var(--admin);
             display: none;
+            animation: fadeIn 0.8s ease-out;
         }
         
         .admin-controls.active {
@@ -456,6 +576,12 @@
             padding: 20px;
             box-shadow: var(--shadow);
             border: 1px solid #ddd;
+            transition: transform 0.3s;
+        }
+        
+        .admin-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
         
         .admin-section h3 {
@@ -493,6 +619,15 @@
             border-radius: 8px;
             font-size: 1rem;
             background-color: white;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+            outline: none;
         }
         
         .admin-btn {
@@ -510,11 +645,29 @@
             font-weight: bold;
             margin-top: 10px;
             font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
         }
         
         .admin-btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow);
+        }
+        
+        .admin-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+        
+        .admin-btn:hover::after {
+            transform: rotate(30deg) translate(100%, 100%);
         }
         
         .products-list {
@@ -532,6 +685,12 @@
             align-items: center;
             padding: 10px;
             border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .product-item:hover {
+            background-color: rgba(236, 240, 241, 0.3);
+            border-radius: 8px;
         }
         
         .product-item:last-child {
@@ -562,6 +721,7 @@
         
         .edit-btn:hover {
             background-color: #2980b9;
+            transform: translateY(-2px);
         }
         
         .delete-btn {
@@ -571,6 +731,69 @@
         
         .delete-btn:hover {
             background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        /* Image Upload */
+        .image-upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .upload-area {
+            width: 200px;
+            height: 150px;
+            border: 2px dashed #3498db;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .upload-area:hover {
+            background-color: #e9ecef;
+            border-color: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        .upload-area i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .upload-area p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .image-preview {
+            width: 200px;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            transition: all 0.3s;
+        }
+        
+        .image-preview:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         /* Admin Access */
@@ -578,6 +801,7 @@
             display: flex;
             justify-content: center;
             margin: 20px 0;
+            animation: fadeIn 0.8s ease-out;
         }
         
         .admin-login {
@@ -589,6 +813,19 @@
             width: 100%;
             text-align: center;
             border: 2px solid var(--admin);
+            transform-origin: center;
+            animation: scaleIn 0.6s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
         
         .admin-login h2 {
@@ -611,6 +848,12 @@
             text-align: center;
             letter-spacing: 3px;
             font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .password-input input:focus {
+            border-color: var(--admin);
+            box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.2);
         }
         
         .login-btn {
@@ -624,11 +867,29 @@
             font-size: 1.1rem;
             transition: all 0.3s;
             width: 100%;
+            position: relative;
+            overflow: hidden;
         }
         
         .login-btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow);
+        }
+        
+        .login-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+        
+        .login-btn:hover::after {
+            transform: rotate(30deg) translate(100%, 100%);
         }
         
         /* Footer */
@@ -638,6 +899,7 @@
             padding: 30px 0;
             margin-top: 50px;
             border-top: 3px solid var(--dollar);
+            animation: fadeIn 0.8s ease-out;
         }
         
         .footer-content {
@@ -710,11 +972,28 @@
             font-weight: 500;
             transition: all 0.3s;
             border: 1px solid #ddd;
+            position: relative;
         }
         
         .tab-btn.active {
             background: linear-gradient(135deg, var(--admin), #8e44ad);
             color: white;
+        }
+        
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--admin);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .tab-btn.active::after {
+            transform: scaleX(1);
         }
         
         /* Responsive Design */
@@ -763,17 +1042,17 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2452/2452491.png" alt="Logo">
-                    <h1>متجر الأجهزة الكهربائية</h1>
+                  <img src="../cvbfg.png" alt="Logo" width="2817" height="1000">
+<h1 id="store-name">متجر الأجهزة الكهربائية</h1>
                 </div>
                 <div class="contact">
-                    <p><i class="fas fa-phone"></i> 1234567890</p>
-                    <p><i class="fas fa-map-marker-alt"></i> المدينة، المنطقة</p>
+                    <p><i class="fas fa-phone"></i> <span id="store-phone">1234567890</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="store-address">المدينة، المنطقة</span></p>
                 </div>
             </div>
         </div>
         <div class="contact-info">
-            <p>الطلبات تستقبل مباشرة عبر واتساب - اضغط على أيقونة واتساب لطلب المنتجات</p>
+            <p id="store-message">الطلبات تستقبل مباشرة عبر واتساب - اضغط على أيقونة واتساب لطلب المنتجات</p>
         </div>
     </header>
 
@@ -840,6 +1119,7 @@
             <div class="tabs">
                 <button class="tab-btn active" data-tab="products">إدارة المنتجات</button>
                 <button class="tab-btn" data-tab="add">إضافة منتج جديد</button>
+                <button class="tab-btn" data-tab="settings">إعدادات المتجر</button>
             </div>
             
             <!-- Products Management Tab -->
@@ -873,11 +1153,6 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="product-image">رابط الصورة:</label>
-                            <input type="url" id="product-image" required>
-                        </div>
-                        
-                        <div class="form-group">
                             <label for="product-category">الفئة:</label>
                             <select id="product-category" required>
                                 <option value="أجهزة المطبخ">أجهزة المطبخ</option>
@@ -888,8 +1163,67 @@
                             </select>
                         </div>
                         
+                        <div class="image-upload">
+                            <div class="upload-area" id="upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>اضغط لتحميل صورة المنتج</p>
+                                <input type="file" id="product-image" accept="image/*" style="display: none;">
+                            </div>
+                            <div class="image-preview" id="image-preview">
+                                <img src="" alt="صورة المنتج">
+                            </div>
+                        </div>
+                        
                         <button type="submit" class="admin-btn">
                             <i class="fas fa-save"></i> حفظ المنتج
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Store Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="admin-section">
+                    <h3><i class="fas fa-store"></i> إعدادات المتجر</h3>
+                    <form class="admin-form" id="store-settings-form">
+                        <div class="form-group">
+                            <label for="store-name-input">اسم المتجر:</label>
+                            <input type="text" id="store-name-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="store-phone-input">رقم الهاتف:</label>
+                            <input type="text" id="store-phone-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="store-address-input">العنوان:</label>
+                            <input type="text" id="store-address-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="store-message-input">رسالة المتجر:</label>
+                            <textarea id="store-message-input" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="whatsapp-number">رقم واتساب:</label>
+                            <input type="text" id="whatsapp-number" required>
+                        </div>
+                        
+                        <div class="image-upload">
+                            <div class="upload-area" id="logo-upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>اضغط لتحميل لوجو المتجر</p>
+                                <input type="file" id="store-logo" accept="image/*" style="display: none;">
+                            </div>
+                            <div class="image-preview" id="logo-preview">
+                                <img src="" alt="لوجو المتجر">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="admin-btn">
+                            <i class="fas fa-save"></i> حفظ الإعدادات
                         </button>
                     </form>
                 </div>
@@ -898,7 +1232,7 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+    <a id="whatsapp-link" href="https://wa.me/+9647514109800" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -908,7 +1242,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>عن المتجر</h3>
-                    <p>متجر متخصص في بيع الأجهزة الكهربائية المنزلية بجودة عالية وأسعار منافسة مع خدمة التوصيل المجاني.</p>
+                    <p id="footer-about">متجر متخصص في بيع الأجهزة الكهربائية المنزلية بجودة عالية وأسعار منافسة مع خدمة التوصيل المجاني.</p>
                 </div>
                 
                 <div class="footer-section">
@@ -924,23 +1258,46 @@
                 <div class="footer-section">
                     <h3>معلومات الاتصال</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> المدينة، المنطقة، الشارع الرئيسي</li>
-                        <li><i class="fas fa-phone"></i> 1234567890</li>
-                        <li><i class="fas fa-envelope"></i> info@electro-store.com</li>
-                        <li><i class="fab fa-whatsapp"></i> 1234567890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span id="footer-address">اربيل شارع 100 متري قرب فندق كريستال</span></li>
+                        <li><i class="fas fa-phone"></i> <span id="footer-phone">07514109800</span></li>
+                        <li><i class="fas fa-envelope"></i> <span id="footer-email">fakiriraq.com</span></li>
+                        <li><i class="fab fa-whatsapp"></i> <span id="footer-whatsapp">07514109800</span></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2023 متجر الأجهزة الكهربائية</p>
+                <p>جميع الحقوق محفوظة &copy; <span id="current-year">2023</span> <span id="footer-store-name">متجر الأجهزة الكهربائية</span></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Sample product data in dollars
-        let products = [
+        // وظيفة للحفظ في localStorage
+        function saveToLocalStorage(key, data) {
+            localStorage.setItem(key, JSON.stringify(data));
+        }
+
+        // وظيفة للقراءة من localStorage
+        function loadFromLocalStorage(key) {
+            const data = localStorage.getItem(key);
+            return data ? JSON.parse(data) : null;
+        }
+
+        // تهيئة إعدادات المتجر
+        const storeSettings = loadFromLocalStorage('storeSettings') || {
+            name: "متجر الأجهزة الكهربائية",
+            phone: "1234567890",
+            address: "المدينة، المنطقة",
+            message: "الطلبات تستقبل مباشرة عبر واتساب - اضغط على أيقونة واتساب لطلب المنتجات",
+            whatsapp: "1234567890",
+            logo: "https://cdn-icons-png.flaticon.com/512/2452/2452491.png",
+            about: "متجر متخصص في بيع الأجهزة الكهربائية المنزلية بجودة عالية وأسعار منافسة مع خدمة التوصيل المجاني.",
+            email: "info@electro-store.com"
+        };
+        
+        // تهيئة المنتجات
+        let products = loadFromLocalStorage('products') || [
             { id: 1, name: "خلاط كهربائي", description: "خلاط سعة 1.5 لتر بقوة 800 وات مع 2 سرعات", price: 40, category: "أجهزة المطبخ", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
             { id: 2, name: "تلفزيون ذكي", description: "تلفزيون 55 بوصة بدقة 4K مع نظام أندرويد", price: 750, category: "أجهزة الترفيه", image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
             { id: 3, name: "مكيف سبليت", description: "مكيف 1.5 طن بتبريد سريع وموفر للطاقة", price: 320, category: "أجهزة التكييف", image: "https://images.unsplash.com/photo-1612441804231-77a36b284856?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" },
@@ -949,8 +1306,12 @@
             { id: 6, name: "ميكروويف", description: "ميكروويف سعة 30 لتر مع شواية و10 مستويات طاقة", price: 175, category: "أجهزة المطبخ", image: "https://images.unsplash.com/photo-1613329673594-4d202c8c65d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" }
         ];
         
+        // حفظ الإعدادات الأولية
+        saveToLocalStorage('storeSettings', storeSettings);
+        saveToLocalStorage('products', products);
+        
         // Shopping cart
-        let cart = [];
+        let cart = loadFromLocalStorage('cart') || [];
         const cartItemsEl = document.querySelector('.cart-items');
         const cartTotalEl = document.querySelector('.total-amount');
         const emptyCartMsg = document.querySelector('.empty-cart-message');
@@ -962,13 +1323,57 @@
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
         const addProductForm = document.getElementById('add-product-form');
+        const storeSettingsForm = document.getElementById('store-settings-form');
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('product-image');
+        const imagePreview = document.getElementById('image-preview');
+        const imagePreviewImg = imagePreview.querySelector('img');
+        const logoUploadArea = document.getElementById('logo-upload-area');
+        const storeLogoInput = document.getElementById('store-logo');
+        const logoPreview = document.getElementById('logo-preview');
+        const logoPreviewImg = logoPreview.querySelector('img');
         
         // Initialize the page
         function initPage() {
+            // تطبيق إعدادات المتجر
+            applyStoreSettings();
+            
             renderProducts();
             updateCartDisplay();
             renderAdminProducts();
             setupEventListeners();
+        }
+        
+        // تطبيق إعدادات المتجر
+        function applyStoreSettings() {
+            // تحديث الهيدر
+            document.getElementById('store-logo').src = storeSettings.logo;
+            document.getElementById('store-name').textContent = storeSettings.name;
+            document.getElementById('store-phone').textContent = storeSettings.phone;
+            document.getElementById('store-address').textContent = storeSettings.address;
+            document.getElementById('store-message').textContent = storeSettings.message;
+            
+            // تحديث رابط واتساب
+            document.getElementById('whatsapp-link').href = `https://wa.me/${storeSettings.whatsapp}`;
+            
+            // تحديث الفوتر
+            document.getElementById('footer-about').textContent = storeSettings.about;
+            document.getElementById('footer-address').textContent = storeSettings.address;
+            document.getElementById('footer-phone').textContent = storeSettings.phone;
+            document.getElementById('footer-email').textContent = storeSettings.email;
+            document.getElementById('footer-whatsapp').textContent = storeSettings.whatsapp;
+            document.getElementById('footer-store-name').textContent = storeSettings.name;
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // ملء نموذج إعدادات المتجر
+            document.getElementById('store-name-input').value = storeSettings.name;
+            document.getElementById('store-phone-input').value = storeSettings.phone;
+            document.getElementById('store-address-input').value = storeSettings.address;
+            document.getElementById('store-message-input').value = storeSettings.message;
+            document.getElementById('whatsapp-number').value = storeSettings.whatsapp;
+            logoPreviewImg.src = storeSettings.logo;
+            logoPreview.style.display = 'block';
+            logoUploadArea.style.display = 'none';
         }
         
         // Setup event listeners
@@ -1016,14 +1421,88 @@
             // Add product form
             addProductForm.addEventListener('submit', addNewProduct);
             
+            // Store settings form
+            storeSettingsForm.addEventListener('submit', saveStoreSettings);
+            
             // Clear cart button
             document.querySelector('.clear-cart').addEventListener('click', () => {
                 cart = [];
+                saveToLocalStorage('cart', cart);
                 updateCartDisplay();
             });
             
             // Checkout button
             document.querySelector('.checkout').addEventListener('click', sendWhatsAppOrder);
+            
+            // Image upload for products
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', handleImageUpload);
+            
+            // Logo upload for store
+            logoUploadArea.addEventListener('click', () => {
+                storeLogoInput.click();
+            });
+            
+            storeLogoInput.addEventListener('change', handleLogoUpload);
+        }
+        
+        // Handle logo upload
+        function handleLogoUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            // Check if file is an image
+            if (!file.type.match('image.*')) {
+                alert('الرجاء اختيار ملف صورة فقط');
+                return;
+            }
+            
+            // File size limit (2MB)
+            if (file.size > 2 * 1024 * 1024) {
+                alert('حجم الصورة يجب أن يكون أقل من 2MB');
+                return;
+            }
+            
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                logoPreviewImg.src = event.target.result;
+                logoPreview.style.display = 'block';
+                logoUploadArea.style.display = 'none';
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        
+        // Handle image upload
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            // Check if file is an image
+            if (!file.type.match('image.*')) {
+                alert('الرجاء اختيار ملف صورة فقط');
+                return;
+            }
+            
+            // File size limit (2MB)
+            if (file.size > 2 * 1024 * 1024) {
+                alert('حجم الصورة يجب أن يكون أقل من 2MB');
+                return;
+            }
+            
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                imagePreviewImg.src = event.target.result;
+                imagePreview.style.display = 'block';
+                uploadArea.style.display = 'none';
+            };
+            
+            reader.readAsDataURL(file);
         }
         
         // Admin login function
@@ -1037,6 +1516,27 @@
             } else {
                 alert('كلمة المرور غير صحيحة. الرجاء المحاولة مرة أخرى.');
             }
+        }
+        
+        // Save store settings
+        function saveStoreSettings(e) {
+            e.preventDefault();
+            
+            // Update store settings
+            storeSettings.name = document.getElementById('store-name-input').value;
+            storeSettings.phone = document.getElementById('store-phone-input').value;
+            storeSettings.address = document.getElementById('store-address-input').value;
+            storeSettings.message = document.getElementById('store-message-input').value;
+            storeSettings.whatsapp = document.getElementById('whatsapp-number').value;
+            storeSettings.logo = logoPreviewImg.src;
+            
+            // Save to localStorage
+            saveToLocalStorage('storeSettings', storeSettings);
+            
+            // Apply new settings
+            applyStoreSettings();
+            
+            alert('تم حفظ إعدادات المتجر بنجاح!');
         }
         
         // Filter products by category
@@ -1058,7 +1558,7 @@
                 return;
             }
             
-            productsToRender.forEach(product => {
+            productsToRender.forEach((product, index) => {
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 productCard.innerHTML = `
@@ -1079,6 +1579,9 @@
                     </div>
                 `;
                 productsGrid.appendChild(productCard);
+                
+                // Add animation delay for staggered appearance
+                productCard.style.animationDelay = `${index * 0.1}s`;
             });
             
             // Add event listeners to the new add-to-cart buttons
@@ -1107,6 +1610,7 @@
                 });
             }
             
+            saveToLocalStorage('cart', cart);
             updateCartDisplay();
         }
         
@@ -1181,6 +1685,7 @@
                 if (item.quantity <= 0) {
                     removeFromCart(id);
                 } else {
+                    saveToLocalStorage('cart', cart);
                     updateCartDisplay();
                 }
             }
@@ -1189,6 +1694,7 @@
         // Remove item from cart
         function removeFromCart(id) {
             cart = cart.filter(item => item.id !== id);
+            saveToLocalStorage('cart', cart);
             updateCartDisplay();
         }
         
@@ -1242,8 +1748,12 @@
             document.getElementById('product-name').value = product.name;
             document.getElementById('product-description').value = product.description;
             document.getElementById('product-price').value = product.price;
-            document.getElementById('product-image').value = product.image;
             document.getElementById('product-category').value = product.category;
+            
+            // Set image preview
+            imagePreviewImg.src = product.image;
+            imagePreview.style.display = 'block';
+            uploadArea.style.display = 'none';
             
             // Switch to add product tab
             document.querySelector('[data-tab="add"]').click();
@@ -1260,11 +1770,13 @@
         function deleteProduct(id) {
             if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
                 products = products.filter(product => product.id !== id);
+                saveToLocalStorage('products', products);
                 renderProducts();
                 renderAdminProducts();
                 
                 // Remove from cart if present
                 cart = cart.filter(item => item.id !== id);
+                saveToLocalStorage('cart', cart);
                 updateCartDisplay();
             }
         }
@@ -1276,8 +1788,14 @@
             const name = document.getElementById('product-name').value;
             const description = document.getElementById('product-description').value;
             const price = parseFloat(document.getElementById('product-price').value);
-            const image = document.getElementById('product-image').value;
             const category = document.getElementById('product-category').value;
+            const image = imagePreviewImg.src;
+            
+            // Validate image
+            if (!image || image.includes('data:image') === false) {
+                alert('الرجاء تحميل صورة للمنتج');
+                return;
+            }
             
             const editingId = addProductForm.dataset.editingId;
             
@@ -1290,8 +1808,8 @@
                         name,
                         description,
                         price,
-                        image,
-                        category
+                        category,
+                        image
                     };
                 }
                 
@@ -1308,15 +1826,21 @@
                     name,
                     description,
                     price,
-                    image,
-                    category
+                    category,
+                    image
                 };
                 
                 products.push(newProduct);
             }
             
+            // Save to localStorage
+            saveToLocalStorage('products', products);
+            
             // Reset form
             addProductForm.reset();
+            imagePreview.style.display = 'none';
+            uploadArea.style.display = 'flex';
+            imagePreviewImg.src = '';
             
             // Update displays
             renderProducts();
@@ -1332,7 +1856,7 @@
                 return;
             }
             
-            let message = "مرحباً، أود طلب المنتجات التالية:\n";
+            let message = `مرحباً، أود طلب المنتجات التالية من ${storeSettings.name}:\n`;
             
             cart.forEach((item, index) => {
                 message += `\n${index + 1}. ${item.name} - ${item.quantity} × ${item.price.toFixed(2)} دولار`;
@@ -1343,15 +1867,17 @@
             message += "\n\nشكراً!";
             
             const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/+9647514109800?text=${encodedMessage}`, '_blank');
+            window.open(`https://wa.me/${storeSettings.whatsapp}?text=${encodedMessage}`, '_blank');
             
             // Clear cart
             cart = [];
+            saveToLocalStorage('cart', cart);
             updateCartDisplay();
         }
         
         // Initialize the page when loaded
         document.addEventListener('DOMContentLoaded', initPage);
+        
     </script>
 </body>
 </html>
