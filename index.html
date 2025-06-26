@@ -1,1 +1,753 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر فكير للأجهزة الكهربائية</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    :root {
+      --primary: #0062FF;
+      --secondary: #19d412;
+      --dark: #1a202c;
+      --light: #f5f7fa;
+      --gray: #718096;
+      --white: #ffffff;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: #333;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    
+    /* التصميم العام */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* الهيدر */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #0048cc 100%);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .logo-img {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+    }
+    
+    /* المنتجات */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+    
+    .product-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    
+    .product-image {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      background-color: #f0f4f8;
+    }
+    
+    .product-info {
+      padding: 20px;
+    }
+    
+    .product-price {
+      background: var(--secondary);
+      color: var(--white);
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin: 15px 0;
+      gap: 10px;
+    }
+    
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    
+    .quantity-display {
+      min-width: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .add-to-cart {
+      background: linear-gradient(135deg, var(--primary) 0%, #0048cc 100%);
+      color: var(--white);
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .add-to-cart:hover {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0, 98, 255, 0.3);
+    }
+    
+    /* سلة المشتريات */
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 100%;
+      max-width: 380px;
+      height: 100vh;
+      background: var(--white);
+      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      z-index: 1000;
+      transition: right 0.4s ease;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    
+    .cart-sidebar.active {
+      right: 0;
+    }
+    
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gray);
+    }
+    
+    .cart-items {
+      margin-bottom: 20px;
+    }
+    
+    .cart-item {
+      display: flex;
+      gap: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .cart-item-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    
+    .cart-item-details {
+      flex: 1;
+    }
+    
+    .cart-item-quantity {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    
+    .cart-total {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    /* زر الواتساب */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    
+    /* زر سلة المشتريات */
+    .cart-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--secondary);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+      z-index: 1000;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--primary);
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    /* الفوتر */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 40px 0;
+      margin-top: 50px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .store-info h3 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    /* متجاوب */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .whatsapp-btn {
+        bottom: 90px;
+        left: 20px;
+        font-size: 0.9rem;
+        padding: 12px 20px;
+      }
+      
+      .cart-btn {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- الهيدر -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-img">F</div>
+          <div>متجر فقير للأجهزة الكهربائية</div>
+        </div>
+        <div class="contact-info">
+          <i class="fas fa-phone"></i> +9647514109800
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+    <!-- البانر -->
+    <section style="margin: 40px 0; text-align: center;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 15px; color: #2d3748;">أحدث الأجهزة الكهربائية بأسعار مميزة</h1>
+      <p style="font-size: 1.1rem; color: #4a5568; max-width: 800px; margin: 0 auto;">
+        نوفر لكم أفضل الأجهزة المنزلية بجودة عالية وضمان مميز مع خدمة التوصيل السريع
+      </p>
+    </section>
+
+    <!-- المنتجات -->
+    <section class="products-grid">
+      <!-- المنتج 1 -->
+      <div class="product-card" data-id="1">
+        <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="ثلاجة" class="product-image">
+        <div class="product-info">
+          <h3>ثلاجة سامسونج 20 قدم</h3>
+          <div class="product-price">$599</div>
+          <p>ثلاجة بفريزر علوي، توفير للطاقة A++، سعة 350 لتر</p>
+          
+          <div class="quantity-controls">
+            <button class="quantity-btn minus">-</button>
+            <span class="quantity-display">1</span>
+            <button class="quantity-btn plus">+</button>
+          </div>
+          
+          <button class="add-to-cart">
+            <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+      
+      <!-- المنتج 2 -->
+      <div class="product-card" data-id="2">
+        <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="غسالة" class="product-image">
+        <div class="product-info">
+          <h3>غسالة LG 8 كغم</h3>
+          <div class="product-price">$450</div>
+          <p>غسالة أوتوماتيكية، 1200 دورة، تكنولوجيا البخار، ضمان 5 سنوات</p>
+          
+          <div class="quantity-controls">
+            <button class="quantity-btn minus">-</button>
+            <span class="quantity-display">1</span>
+            <button class="quantity-btn plus">+</button>
+          </div>
+          
+          <button class="add-to-cart">
+            <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+      
+      <!-- المنتج 3 -->
+      <div class="product-card" data-id="3">
+        <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="مكيف" class="product-image">
+        <div class="product-info">
+          <h3>مكيف جري 1.5 طن</h3>
+          <div class="product-price">$350</div>
+          <p>مكيف سبليت، تبريد وسخان، موفر للطاقة، تحكم عن بعد</p>
+          
+          <div class="quantity-controls">
+            <button class="quantity-btn minus">-</button>
+            <span class="quantity-display">1</span>
+            <button class="quantity-btn plus">+</button>
+          </div>
+          
+          <button class="add-to-cart">
+            <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+      
+      <!-- المنتج 4 -->
+      <div class="product-card" data-id="4">
+        <img src="https://images.unsplash.com/photo-1581093458799-acd3a98b5c82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="فرن" class="product-image">
+        <div class="product-info">
+          <h3>فرن كهربائي ديجيتال</h3>
+          <div class="product-price">$180</div>
+          <p>فرن 60 لتر، شواية، مؤقت، إضاءة داخلية، 5 مستويات حرارة</p>
+          
+          <div class="quantity-controls">
+            <button class="quantity-btn minus">-</button>
+            <span class="quantity-display">1</span>
+            <button class="quantity-btn plus">+</button>
+          </div>
+          
+          <button class="add-to-cart">
+            <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+      
+      <!-- المنتج 5 -->
+      <div class="product-card" data-id="5">
+        <img src="https://images.unsplash.com/photo-1579781353335-8f1e3b7e0b7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="ميكروويف" class="product-image">
+        <div class="product-info">
+          <h3>ميكروويف سامسونج</h3>
+          <div class="product-price">$120</div>
+          <p>سعة 25 لتر، 10 مستويات طاقة، شواية، مؤقت ديجيتال</p>
+          
+          <div class="quantity-controls">
+            <button class="quantity-btn minus">-</button>
+            <span class="quantity-display">1</span>
+            <button class="quantity-btn plus">+</button>
+          </div>
+          
+          <button class="add-to-cart">
+            <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+      
+      <!-- المنتج 6 -->
+      <div class="product-card" data-id="6">
+        <img src="https://images.unsplash.com/photo-1556911220-ef412ae179a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="غلاية" class="product-image">
+        <div class="product-info">
+          <h3>غلاية كهربائية</h3>
+          <div class="product-price">$45</div>
+          <p>سعة 1.8 لتر، إغلاق تلقائي، قاعدة دوارة، مؤشر مستوى الماء</p>
+          
+          <div class="quantity-controls">
+            <button class="quantity-btn minus">-</button>
+            <span class="quantity-display">1</span>
+            <button class="quantity-btn plus">+</button>
+          </div>
+          
+          <button class="add-to-cart">
+            <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- الفوتر -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="store-info">
+          <h3>متجر فقير للأجهزة الكهربائية</h3>
+          <p><i class="fas fa-map-marker-alt"></i> اربيل 100متري قرب فندق كريستال</p>
+          <p><i class="fas fa-phone"></i> +9647514109800</p>
+          <p><i class="fas fa-envelope"></i> info@fakirelectro.com</p>
+        </div>
+        
+        <div class="store-hours">
+          <h3>ساعات العمل</h3>
+          <p>الأحد - الخميس: 9 صباحاً - 10 مساءً</p>
+          <p>الجمعة: 1 ظهراً - 10 مساءً</p>
+          <p>السبت: 9 صباحاً - 12 منتصف الليل</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- زر الواتساب -->
+  <button class="whatsapp-btn" id="whatsappBtn">
+    <i class="fab fa-whatsapp"></i> أطلب عبر واتساب
+  </button>
+  
+  <!-- زر سلة المشتريات -->
+  <div class="cart-btn" id="cartBtn">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span>
+  </div>
+  
+  <!-- سلة المشتريات -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>سلة المشتريات</h3>
+      <button class="close-cart" id="closeCart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+      <!-- سيتم إضافة عناصر السلة هنا -->
+      <div class="empty-cart" style="text-align: center; padding: 40px 0; color: var(--gray);">
+        <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 15px;"></i>
+        <p>سلة المشتريات فارغة</p>
+      </div>
+    </div>
+    
+    <div class="cart-total" id="cartTotal">
+      المجموع: $0
+    </div>
+    
+    <button class="add-to-cart" style="background: var(--secondary);" id="checkoutBtn">
+      <i class="fab fa-whatsapp"></i> إتمام الطلب عبر واتساب
+    </button>
+  </div>
+  
+  <script>
+    // بيانات المتجر
+    const storeName = "متجر فقير للأجهزة الكهربائية";
+    const storeAddress = "اربيل 100متري قرب فندق كريستال";
+    const storePhone = "+9647514109800";
+    
+    // سلة المشتريات
+    let cart = [];
+    
+    // عناصر DOM
+    const cartBtn = document.getElementById('cartBtn');
+    const closeCart = document.getElementById('closeCart');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartCount = document.querySelector('.cart-count');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    
+    // عرض/إخفاء سلة المشتريات
+    cartBtn.addEventListener('click', () => {
+      cartSidebar.classList.add('active');
+      updateCartDisplay();
+    });
+    
+    closeCart.addEventListener('click', () => {
+      cartSidebar.classList.remove('active');
+    });
+    
+    // تحديث عداد السلة
+    function updateCartCount() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCount.textContent = totalItems;
+    }
+    
+    // تحديث عرض السلة
+    function updateCartDisplay() {
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="empty-cart" style="text-align: center; padding: 40px 0; color: var(--gray);">
+            <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 15px;"></i>
+            <p>سلة المشتريات فارغة</p>
+          </div>
+        `;
+        cartTotal.textContent = 'المجموع: $0';
+        return;
+      }
+      
+      let itemsHTML = '';
+      let total = 0;
+      
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        
+        itemsHTML += `
+          <div class="cart-item" data-id="${item.id}">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+            <div class="cart-item-details">
+              <h4>${item.name}</h4>
+              <div>$${item.price} × ${item.quantity} = $${itemTotal.toFixed(2)}</div>
+              
+              <div class="cart-item-quantity">
+                <button class="quantity-btn minus" onclick="updateCartItem(${item.id}, -1)">-</button>
+                <span class="quantity-display">${item.quantity}</span>
+                <button class="quantity-btn plus" onclick="updateCartItem(${item.id}, 1)">+</button>
+                <button class="remove-btn" onclick="removeCartItem(${item.id})" style="margin-right: auto; background: none; border: none; color: #e53e3e; cursor: pointer;">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      
+      cartItems.innerHTML = itemsHTML;
+      cartTotal.textContent = `المجموع: $${total.toFixed(2)}`;
+    }
+    
+    // تحديث كمية المنتج في السلة
+    function updateCartItem(productId, change) {
+      const itemIndex = cart.findIndex(item => item.id === productId);
+      
+      if (itemIndex !== -1) {
+        cart[itemIndex].quantity += change;
+        
+        // إذا كانت الكمية أقل من 1، قم بإزالة المنتج من السلة
+        if (cart[itemIndex].quantity < 1) {
+          cart.splice(itemIndex, 1);
+        }
+        
+        updateCartCount();
+        updateCartDisplay();
+      }
+    }
+    
+    // إزالة منتج من السلة
+    function removeCartItem(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      updateCartCount();
+      updateCartDisplay();
+    }
+    
+    // إضافة منتج إلى السلة
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        const productId = parseInt(productCard.dataset.id);
+        const productName = productCard.querySelector('h3').textContent;
+        const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
+        const productImage = productCard.querySelector('.product-image').src;
+        const productQuantity = parseInt(productCard.querySelector('.quantity-display').textContent);
+        
+        // التحقق مما إذا كان المنتج موجودًا بالفعل في السلة
+        const existingItem = cart.find(item => item.id === productId);
+        
+        if (existingItem) {
+          existingItem.quantity += productQuantity;
+        } else {
+          cart.push({
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: productQuantity
+          });
+        }
+        
+        // إعادة تعيين العداد
+        productCard.querySelector('.quantity-display').textContent = '1';
+        
+        // تحديث واجهة السلة
+        updateCartCount();
+        
+        // رسالة تأكيد
+        this.innerHTML = '<i class="fas fa-check"></i> تمت الإضافة';
+        this.style.background = '#38a169';
+        
+        setTimeout(() => {
+          this.innerHTML = '<i class="fas fa-shopping-cart"></i> أضف إلى السلة';
+          this.style.background = 'linear-gradient(135deg, var(--primary) 0%, #0048cc 100%)';
+        }, 2000);
+      });
+    });
+    
+    // التحكم في الكمية للمنتجات
+    document.querySelectorAll('.quantity-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const display = this.closest('.quantity-controls').querySelector('.quantity-display');
+        let quantity = parseInt(display.textContent);
+        
+        if (this.classList.contains('plus')) {
+          quantity += 1;
+        } else if (this.classList.contains('minus') && quantity > 1) {
+          quantity -= 1;
+        }
+        
+        display.textContent = quantity;
+      });
+    });
+    
+    // إرسال الطلب عبر واتساب
+    function sendWhatsAppOrder() {
+      if (cart.length === 0) {
+        alert('السلة فارغة! أضف منتجات أولاً');
+        return;
+      }
+      
+      let message = `*طلب جديد من ${storeName}*\n\n`;
+      message += `*المنتجات:*\n`;
+      
+      cart.forEach(item => {
+        message += `- ${item.name} (${item.quantity} × $${item.price}) = $${(item.quantity * item.price).toFixed(2)}\n`;
+      });
+      
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      message += `\n*المجموع: $${total.toFixed(2)}*\n`;
+      message += `\n*العنوان:* ${storeAddress}\n`;
+      message += `*رقم الهاتف:* ${storePhone}\n`;
+      
+      const whatsappUrl = `https://wa.me/9647514109800?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      
+      // إفراغ السلة بعد الإرسال
+      cart = [];
+      updateCartCount();
+      updateCartDisplay();
+      cartSidebar.classList.remove('active');
+    }
+    
+    // ربط أزرار الطلب
+    whatsappBtn.addEventListener('click', sendWhatsAppOrder);
+    checkoutBtn.addEventListener('click', sendWhatsAppOrder);
+    
+    // تهيئة المتجر
+    updateCartCount();
+  </script>
+</body>
+</html>
