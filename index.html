@@ -107,10 +107,19 @@
     }
     
     .product-image {
-      height: 140px;
+      height: 160px;
       width: 100%;
-      object-fit: cover;
-      background-color: #f0f4f8;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    
+    .product-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
     
     .product-info {
@@ -120,6 +129,8 @@
     .product-info h3 {
       font-size: 0.95rem;
       margin-bottom: 5px;
+      color: var(--dark);
+      min-height: 40px;
     }
     
     .product-price {
@@ -247,10 +258,20 @@
     }
     
     .cart-item-image {
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       border-radius: 8px;
-      object-fit: cover;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+    
+    .cart-item-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
     
     .cart-item-details {
@@ -574,7 +595,7 @@
       }
       
       .product-image {
-        height: 120px;
+        height: 130px;
       }
       
       .hero-banner {
@@ -637,7 +658,7 @@
       }
       
       .product-image {
-        height: 160px;
+        height: 180px;
       }
     }
     
@@ -648,7 +669,7 @@
       }
       
       .product-image {
-        height: 180px;
+        height: 200px;
       }
     }
   </style>
@@ -835,18 +856,46 @@
       // المنتجات الثابتة فقط
       products = [
         {
-            "id": 1751107925240,
-            "name": "uno chefry",
-            "price": 115,
-            "image": "https://www.fakir.com.tr/uno-chefry-isti-hava-fritoz-airfryer-fakir-fakir-7302-41-B.jpg",
-            "description": "Air Fryer\n"
+          "id": 1751107925240,
+          "name": "Fakir Uno Chefry Air Fryer",
+          "price": 115,
+          "image": "https://www.fakir.com.tr/uno-chefry-isti-hava-fritoz-airfryer-fakir-fakir-7302-41-B.jpg",
+          "description": "مقلاة هوائية بتقنية متطورة لتحضير طعام صحي"
         },
         {
-            "id": 1751107925241,
-            "name": "mono chefry ",
-            "price": 110,
-            "image": "https://www.soliton.az/images/articles/2024/02/14/20240214031059963_1.jpg",
-            "description": "Air Fryer\n"
+          "id": 1751107925241,
+          "name": "Fakir Mono Chefry Air Fryer",
+          "price": 110,
+          "image": "https://www.soliton.az/images/articles/2024/02/14/20240214031059963_1.jpg",
+          "description": "مقلاة هوائية بتصميم عصري وسهولة الاستخدام"
+        },
+        {
+          "id": 1751107925242,
+          "name": "Fakir Turbo Blender",
+          "price": 85,
+          "image": "https://cdn.dsmcdn.com/ty1241/pimWidgetApi/mobile_20231004162602_20231004162602turboBlender.png",
+          "description": "خلاط قوي بسعة 1.5 لتر مع شفرات ستانلس ستيل"
+        },
+        {
+          "id": 1751107925243,
+          "name": "Fakir Steam Iron",
+          "price": 45,
+          "image": "https://www.fakir.com.tr/aydin-utuelektrikli-utu-fakir-fakir-9191-41-B.jpg",
+          "description": "مكواة بخار بقوة 2400 وات مع قاعدة سيراميك"
+        },
+        {
+          "id": 1751107925244,
+          "name": "Fakir Hand Mixer",
+          "price": 60,
+          "image": "https://www.fakir.com.tr/aydin-el-mikseri-fakir-fakir-9223-41-B.jpg",
+          "description": "خلاط يدوي بقوة 500 وات مع 5 سرعات"
+        },
+        {
+          "id": 1751107925245,
+          "name": "Fakir Coffee Maker",
+          "price": 90,
+          "image": "https://www.fakir.com.tr/aydin-filtre-kahve-makinesi-fakir-fakir-9253-41-B.jpg",
+          "description": "ماكينة قهوة بسعة 1.25 لتر مع فلتر دائم"
         }
       ];
     }
@@ -919,7 +968,9 @@
         
         itemsHTML += `
           <div class="cart-item" data-id="${item.id}">
-            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+            <div class="cart-item-image">
+              <img src="${item.image}" alt="${item.name}">
+            </div>
             <div class="cart-item-details">
               <h4>${item.name}</h4>
               <div>$${item.price} × ${item.quantity} = $${itemTotal.toFixed(2)}</div>
@@ -971,7 +1022,7 @@
       const productId = parseInt(productCard.dataset.id);
       const productName = productCard.querySelector('h3').textContent;
       const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
-      const productImage = productCard.querySelector('.product-image').src;
+      const productImage = productCard.querySelector('.product-image img').src;
       const productQuantity = parseInt(productCard.querySelector('.quantity-display').textContent);
       
       // التحقق مما إذا كان المنتج موجودًا بالفعل في السلة
@@ -1041,7 +1092,9 @@
         productCard.className = 'product-card';
         productCard.dataset.id = product.id;
         productCard.innerHTML = `
-          <img src="${product.image}" alt="${product.name}" class="product-image">
+          <div class="product-image">
+            <img src="${product.image}" alt="${product.name}">
+          </div>
           <div class="product-info">
             <h3>${product.name}</h3>
             <div class="product-price">$${product.price}</div>
@@ -1157,10 +1210,8 @@
       // إنشاء رابط واتساب
       const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
       
-      // فتح الرابط في نافذة جديدة
+      // فتح الرابط في نافذة جديدة - حل مشكلة الآيفون
       setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-        
         // إخفاء مؤشر التحميل
         orderLoader.style.display = 'none';
         
@@ -1174,8 +1225,11 @@
         cartSidebar.classList.remove('active');
         overlay.classList.remove('active');
         
+        // فتح الرابط في نافذة جديدة
+        window.open(whatsappUrl, '_blank');
+        
         showNotification('تم إرسال طلبك بنجاح عبر واتساب');
-      }, 1500);
+      }, 500);
     }
     
     // نسخ تفاصيل الطلب
