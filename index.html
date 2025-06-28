@@ -229,20 +229,30 @@
       flex-grow: 1;
     }
     
-    .quantity-controls {
+    /* التحكم بالكمية - التصميم الجديد */
+    .quantity-section {
+      margin: 12px 0;
+    }
+    
+    .quantity-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: var(--dark);
+    }
+    
+    .quantity-input-group {
       display: flex;
       align-items: center;
-      margin: 10px 0;
       gap: 8px;
-      justify-content: center;
     }
     
     .quantity-btn {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      border-radius: 8px;
       background: var(--primary);
-      color: var(--white);
+      color: white;
       border: none;
       display: flex;
       align-items: center;
@@ -250,23 +260,33 @@
       cursor: pointer;
       font-size: 1.1rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.2s;
     }
     
-    .quantity-display {
-      min-width: 30px;
+    .quantity-btn:hover {
+      background: #4a6fb9;
+      transform: scale(1.05);
+    }
+    
+    .quantity-input {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      font-size: 1.1rem;
       text-align: center;
       font-weight: bold;
-      font-size: 1rem;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
     }
     
     .add-to-cart {
       background: linear-gradient(135deg, var(--primary) 0%, #0048cc 100%);
       color: var(--white);
       border: none;
-      padding: 10px;
+      padding: 12px;
       width: 100%;
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s;
       display: flex;
@@ -274,6 +294,8 @@
       justify-content: center;
       gap: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      font-weight: bold;
     }
     
     .add-to-cart:hover {
@@ -714,6 +736,11 @@
         font-size: 1rem;
         padding: 13px;
       }
+      
+      .quantity-input {
+        padding: 8px;
+        font-size: 0.95rem;
+      }
     }
     
     /* تحسينات للشاشات المتوسطة */
@@ -1084,25 +1111,37 @@
       const productName = productCard.querySelector('h3').textContent;
       const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
       const productImage = productCard.querySelector('.product-image img').src;
-      const productQuantity = parseInt(productCard.querySelector('.quantity-display').textContent);
+      
+      // الحصول على الكمية المدخلة
+      const quantityInput = productCard.querySelector('.quantity-input');
+      let quantity = parseInt(quantityInput.value) || 1;
+      
+      // التحقق من صحة الكمية
+      if (isNaN(quantity)) quantity = 1;
+      if (quantity < 1) quantity = 1;
+      if (quantity > 100) {
+        showNotification('الحد الأقصى للطلب هو 100 قطعة لكل منتج', false);
+        quantity = 100;
+        quantityInput.value = 100;
+      }
       
       // التحقق مما إذا كان المنتج موجودًا بالفعل في السلة
       const existingItem = cart.find(item => item.id === productId);
       
       if (existingItem) {
-        existingItem.quantity += productQuantity;
+        existingItem.quantity += quantity;
       } else {
         cart.push({
           id: productId,
           name: productName,
           price: productPrice,
           image: productImage,
-          quantity: productQuantity
+          quantity: quantity
         });
       }
       
       // إعادة تعيين العداد
-      productCard.querySelector('.quantity-display').textContent = '1';
+      quantityInput.value = '1';
       
       // تحديث واجهة السلة
       updateCartCount();
@@ -1119,19 +1158,28 @@
       showNotification('تمت إضافة المنتج إلى السلة بنجاح');
     }
     
-    // التحكم في الكمية للمنتجات
-    function quantityBtnHandler() {
-      const controls = this.closest('.quantity-controls');
-      const display = controls.querySelector('.quantity-display');
-      let quantity = parseInt(display.textContent);
+    // التحقق من صحة الكمية المدخلة
+    function validateQuantity(input) {
+      let value = parseInt(input.value) || 1;
       
-      if (this.classList.contains('plus')) {
-        quantity += 1;
-      } else if (this.classList.contains('minus') && quantity > 1) {
-        quantity -= 1;
-      }
+      if (isNaN(value)) value = 1;
+      if (value < 1) value = 1;
+      if (value > 100) value = 100;
       
-      display.textContent = quantity;
+      input.value = value;
+    }
+    
+    // تغيير الكمية باستخدام الأزرار
+    function changeQuantity(btn, change) {
+      const input = btn.parentElement.querySelector('.quantity-input');
+      let value = parseInt(input.value) || 1;
+      
+      value += change;
+      
+      if (value < 1) value = 1;
+      if (value > 100) value = 100;
+      
+      input.value = value;
     }
     
     // عرض المنتجات
@@ -1161,10 +1209,13 @@
             <div class="product-price">$${product.price}</div>
             <p>${product.description}</p>
             
-            <div class="quantity-controls">
-              <button class="quantity-btn minus">-</button>
-              <span class="quantity-display">1</span>
-              <button class="quantity-btn plus">+</button>
+            <div class="quantity-section">
+              <label class="quantity-label">الكمية المطلوبة:</label>
+              <div class="quantity-input-group">
+                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                <input type="number" min="1" max="100" value="1" class="quantity-input" onchange="validateQuantity(this)">
+                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+              </div>
             </div>
             
             <button class="add-to-cart">
@@ -1199,11 +1250,6 @@
     
     // تهيئة أحداث المنتجات
     function initProductEvents() {
-      // أزرار الكمية
-      document.querySelectorAll('.quantity-btn').forEach(button => {
-        button.addEventListener('click', quantityBtnHandler);
-      });
-      
       // أزرار إضافة إلى السلة
       document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', addToCartHandler);
@@ -1376,6 +1422,8 @@
     // تعريف الدوال في النطاق العام
     window.updateCartItem = updateCartItem;
     window.removeCartItem = removeCartItem;
+    window.validateQuantity = validateQuantity;
+    window.changeQuantity = changeQuantity;
   </script>
 </body>
 </html>
