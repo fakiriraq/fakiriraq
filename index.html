@@ -1406,10 +1406,10 @@
       // التحقق من صحة الكمية
       if (isNaN(quantity)) quantity = 1;
       if (quantity < 1) quantity = 1;
-      if (quantity > 100) {
-        showNotification('الحد الأقصى للطلب هو 100 قطعة لكل منتج', false);
-        quantity = 100;
-        quantityInput.value = 100;
+      if (quantity > 500) {
+        showNotification('الحد الأقصى للطلب هو 500 قطعة لكل منتج', false);
+        quantity = 500;
+        quantityInput.value = 500;
       }
 
       // التحقق مما إذا كان المنتج موجودًا بالفعل في السلة
@@ -1451,7 +1451,7 @@
 
       if (isNaN(value)) value = 1;
       if (value < 1) value = 1;
-      if (value > 100) value = 100;
+      if (value > 500) value = 500;
 
       input.value = value;
     }
@@ -1464,7 +1464,7 @@
       value += change;
 
       if (value < 1) value = 1;
-      if (value > 100) value = 100;
+      if (value > 500) value = 500;
 
       input.value = value;
     }
