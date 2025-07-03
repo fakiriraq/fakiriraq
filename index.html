@@ -285,6 +285,13 @@
       width: fit-content;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+
+    /* سعر غير متوفر */
+    .product-price.unavailable-price {
+      background: var(--gray);
+      color: #d3d3d3;
+      text-decoration: line-through;
+    }
     
     .product-info p {
       font-size: 0.85rem;
@@ -745,7 +752,6 @@
       border-radius: 5px;
       font-size: 0.8rem;
       margin-left: 5px;
-      display: inline-block;
     }
     
     /* تحسينات متجاوبة إضافية */
@@ -885,7 +891,7 @@
       top: 10px;
       left: 10px;
       background: var(--primary);
-      color: white;
+      color: rgb(0, 0, 0);
       padding: 5px 10px;
       border-radius: 20px;
       font-size: 0.85rem;
@@ -1099,7 +1105,7 @@
     function loadProducts() {
       // المنتجات مع إضافة خاصية available
       products = [
-               {id: 1751444549647, name: "uno chefry", price: 115, image: "https://www.fakir.com.tr/uno-chefry-isti-hava-fritoz-airfryer-fakir-fakir-7302-41-B.jpg", description: "Air Fryer", available: false, category: "kitchen"},
+        {id: 1751444549647, name: "uno chefry", price: 115, image: "https://www.fakir.com.tr/uno-chefry-isti-hava-fritoz-airfryer-fakir-fakir-7302-41-B.jpg", description: "Air Fryer", available: false, category: "kitchen"},
         {id: 1751444549648, name: "mono chefry ", price: 110, image: "https://www.soliton.az/images/articles/2024/02/14/20240214031059963_1.jpg", description: "Air Fryer", available: true, category: "kitchen"},
         {id: 1751444549649, name: "Temper ", price: 106, image: "https://www.fakir.com.tr/temper-cay-makinesi-inox-fakir-7498-30-B.jpg", description: "Çay Makinesi", available: true, category: "coffee"},
         {id: 1751444549650, name: "BOLT X PLUS AQUA", price: 299, image: "https://www.fakir.com.tr/bolt-x-plus-aqua-8472-dikey-sarjli-kablosuz-supurge-moon-gray-fakir-fakir-7303-41-B.jpg", description: "Rechargable Upright Vacuum Cleaner", available: true, category: "cleaning"},
@@ -1133,7 +1139,7 @@
         {id: 1751444549678, name: "BASE", price: 60, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8p0_4QpMY8fslIIbHjs8rDFsNinhpUqMDpA&s", description: "Turkish Coffee Maker", available: false, category: "coffee"},
         {id: 1751444549679, name: "AROMA GOURMET", price: 103, image: "https://www.fakir.com.tr/aroma-gourmet-filtre-kahve-makinesi-copper-fakir-6828-41-B.jpg", description: "Filter Coffee Machine", available: true, category: "coffee"},
         {id: 1751444549680, name: "AROMATIC", price: 22, image: "https://www.elryan.com/img/600/600/resize/catalog/product/a/r/aromatic-kahvebaharat-ogutucusu-fakir-0-1296-24-o.png", description: "Grinder", available: true, category: "coffee"},
-        {id: 1751444549681, name: "SITARE AQUA", price: 125, image: "https://www.fakir.com.tr/fakir-sitare-aqua-buz-yapma-makinesi-fakir-7482-60-B.jpg", description: "Ice Maker Machine", available: true, category: "home"},
+        {id: 1751444549681, name: "SITARE AQUA", price: 125, image: "https://www.fakir.com.tr/fakir-sitare-aqua-buz-yapma-mak-beyaz-fakir-7482-60-B.jpg", description: "Ice Maker Machine", available: true, category: "home"},
         {id: 1751444549682, name: "SITARE", price: 125, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLEx1j18zydqIAOyQ6lySEawYNaalLBAHvpQ&s", description: "Ice Maker Machine", available: true, category: "home"},
         {id: 1751444549683, name: "HYDROP PRO", price: 150, image: "https://www.fakir.com.tr/fakir-hydrop-pro-su-sebili-gri-fakir-7459-60-B.jpg", description: "Water Dispenser", available: false, category: "home"},
         {id: 1751444549684, name: "HYDROP SB1004", price: 115, image: "https://d2nmpl80xmejtd.cloudfront.net/Images/kKnKN4M4iHUEzY6oyslEODAM9qxIeQRPhInPzSYN.jpg", description: "Water Dispenser", available: false, category: "home"},
@@ -1458,7 +1464,7 @@
             <img src="${product.image}" alt="${product.name}">
           </div>
           <div class="product-info">
-            ${isAvailable ? `<div class="product-price">$${product.price}</div>` : ''}
+            <div class="product-price ${isAvailable ? '' : 'unavailable-price'}">$${product.price}</div>
             <h3>${product.name} ${isAvailable ? '' : '<span class="unavailable-tag">غير متوفر</span>'}</h3>
             <p>${product.description}</p>
             
@@ -1511,24 +1517,31 @@
         return true;
       });
       
-      // الترتيب
-      switch(sortValue) {
-        case 'price-asc':
-          filtered.sort((a, b) => a.price - b.price);
-          break;
-        case 'price-desc':
-          filtered.sort((a, b) => b.price - a.price);
-          break;
-        case 'name-asc':
-          filtered.sort((a, b) => a.name.localeCompare(b.name, 'ar'));
-          break;
-        case 'name-desc':
-          filtered.sort((a, b) => b.name.localeCompare(a.name, 'ar'));
-          break;
-        default:
-          // الترتيب الافتراضي (حسب تاريخ الإضافة)
-          break;
-      }
+      // ترتيب المنتجات: المتوفرة أولاً ثم غير المتوفرة
+      filtered.sort((a, b) => {
+        // إذا كان a متوفر و b غير متوفر، ضع a أولاً
+        if (a.available && !b.available) {
+          return -1;
+        }
+        // إذا كان a غير متوفر و b متوفر، ضع b أولاً
+        if (!a.available && b.available) {
+          return 1;
+        }
+        // إذا كانا نفس الحالة (كلاهما متوفر أو غير متوفر)
+        // التطبيق الترتيب المحدد
+        switch(sortValue) {
+          case 'price-asc':
+            return a.price - b.price;
+          case 'price-desc':
+            return b.price - a.price;
+          case 'name-asc':
+            return a.name.localeCompare(b.name, 'ar');
+          case 'name-desc':
+            return b.name.localeCompare(a.name, 'ar');
+          default:
+            return 0;
+        }
+      });
       
       // حفظ المنتجات المعروضة
       displayedProducts = filtered;
