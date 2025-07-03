@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -12,7 +13,7 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     :root {
       --primary: #6486C4;
       --secondary: #069601;
@@ -23,11 +24,11 @@
       --red: #e53e3e;
       --orange: #ed8936;
       --yellow: #ecc94b;
-      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       --unavailable-bg: #f8f9fa;
       --unavailable-text: #718096;
     }
-    
+
     body {
       background-color: var(--light);
       color: #333;
@@ -36,14 +37,14 @@
       font-size: 16px;
       padding-bottom: 90px;
     }
-    
+
     /* التصميم العام */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 15px;
     }
-    
+
     /* الهيدر - تصميم محسن للجوال */
     header {
       background: linear-gradient(135deg, var(--primary) 0%, #4a6fb9 100%);
@@ -54,14 +55,14 @@
       top: 0;
       z-index: 100;
     }
-    
+
     .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 10px;
     }
-    
+
     .logo {
       display: flex;
       align-items: center;
@@ -71,7 +72,7 @@
       flex-grow: 1;
       justify-content: right;
     }
-    
+
     .logo-img {
       width: 50px;
       height: 50px;
@@ -79,14 +80,14 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     .logo-img img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
-    
+
     .contact-info {
       font-size: 0.9rem;
       display: flex;
@@ -95,11 +96,11 @@
       position: absolute;
       left: 15px;
     }
-    
+
     /* بانر جديد مع خلفية محسنة */
     .hero-banner {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                  url('https://scontent.febl5-1.fna.fbcdn.net/v/t39.30808-6/475993510_586655830805930_229812848751241936_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHdfHWpzOtVDF96NEwRLF0hXO9V40t_4V5c71XjS3_hXlltcbYhvnxglsB1SuI3SPViHmzm2xWsXShQDGJ4N-Cm&_nc_ohc=_wCxS2COvf0Q7kNvwEPSmO4&_nc_oc=AdmFCe4iayjr-RBBqLc_SNz1PACCBD_6tH1vNS8EZ-9zmkrWNfA8SJALhJ5Zsmt2MmM&_nc_zt=23&_nc_ht=scontent.febl5-1.fna&_nc_gid=3H_q4_59Rj_OE6Ix35R2qg&oh=00_AfN6BdiApJX_40_N-HtAz0iaaso1LYjrcxFyUIHAnIOdVA&oe=68638D9D');
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://scontent.febl5-1.fna.fbcdn.net/v/t39.30808-6/475993510_586655830805930_229812848751241936_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHdfHWpzOtVDF96NEwRLF0hXO9V40t_4V5c71XjS3_hXlltcbYhvnxglsB1SuI3SPViHmzm2xWsXShQDGJ4N-Cm&_nc_ohc=_wCxS2COvf0Q7kNvwEPSmO4&_nc_oc=AdmFCe4iayjr-RBBqLc_SNz1PACCBD_6tH1vNS8EZ-9zmkrWNfA8SJALhJ5Zsmt2MmM&_nc_zt=23&_nc_ht=scontent.febl5-1.fna&_nc_gid=3H_q4_59Rj_OE6Ix35R2qg&oh=00_AfN6BdiApJX_40_N-HtAz0iaaso1LYjrcxFyUIHAnIOdVA&oe=68638D9D');
       background-size: cover;
       background-position: center;
       padding: 50px 15px;
@@ -108,22 +109,22 @@
       margin: 20px 0;
       box-shadow: var(--shadow);
     }
-    
+
     .hero-banner h1 {
       font-size: 1.6rem;
       margin-bottom: 12px;
       color: #fff;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
-    
+
     .hero-banner p {
       font-size: 1rem;
       color: #fff;
       max-width: 800px;
       margin: 0 auto;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
-    
+
     /* شريط البحث والتصفية */
     .filter-container {
       display: grid;
@@ -131,7 +132,7 @@
       gap: 15px;
       margin: 15px 0;
     }
-    
+
     .search-bar {
       background: white;
       padding: 12px 15px;
@@ -140,16 +141,16 @@
       display: flex;
       gap: 10px;
     }
-    
+
     .search-bar input {
       flex: 1;
       padding: 12px;
       border: 1px solid #cbd5e0;
       border-radius: 8px;
       font-size: 1rem;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     }
-    
+
     .search-bar button {
       background: var(--primary);
       color: white;
@@ -164,7 +165,7 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     .filter-bar {
       background: white;
       padding: 12px 15px;
@@ -174,7 +175,7 @@
       gap: 10px;
       align-items: center;
     }
-    
+
     .filter-bar select {
       padding: 10px;
       border: 1px solid #cbd5e0;
@@ -183,14 +184,14 @@
       background: white;
       min-width: 140px;
     }
-    
+
     .category-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin: 10px 0 20px;
     }
-    
+
     .category-btn {
       background: white;
       border: 1px solid var(--primary);
@@ -201,12 +202,13 @@
       transition: all 0.3s;
       font-size: 0.9rem;
     }
-    
-    .category-btn.active, .category-btn:hover {
+
+    .category-btn.active,
+    .category-btn:hover {
       background: var(--primary);
       color: white;
     }
-    
+
     /* المنتجات */
     .products-grid {
       display: grid;
@@ -214,7 +216,7 @@
       gap: 18px;
       margin: 25px 0;
     }
-    
+
     .product-card {
       background: var(--white);
       border-radius: 14px;
@@ -226,17 +228,17 @@
       flex-direction: column;
       height: 100%;
     }
-    
+
     .product-card.unavailable {
       background: var(--unavailable-bg);
-      opacity: 0.85;
+      opacity: 0.75;
     }
-    
+
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
-    
+
     .product-image {
       height: 170px;
       width: 100%;
@@ -246,20 +248,20 @@
       align-items: center;
       padding: 15px;
     }
-    
+
     .product-image img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
-    
+
     .product-info {
       padding: 15px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
-    
+
     .product-info h3 {
       font-size: 1rem;
       margin-bottom: 8px;
@@ -270,7 +272,7 @@
       justify-content: center;
       text-align: center;
     }
-    
+
     /* تعديلات على السعر - حجم أكبر وفي الوسط */
     .product-price {
       background: var(--secondary);
@@ -283,16 +285,30 @@
       font-size: 1.3rem;
       text-align: center;
       width: fit-content;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* تنسيقات الكمية الجديدة */
+    .product-quantity {
+      background: #f7ff84;
+      color: var(--black);
+      display: block;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin: 10px auto;
+      font-size: 1.3rem;
+      text-align: center;
+      width: fit-content;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     /* سعر غير متوفر */
     .product-price.unavailable-price {
-      background: var(--gray);
-      color: #d3d3d3;
-      text-decoration: line-through;
+      background: var(--red);
+      color: #ffffff;
     }
-    
+
     .product-info p {
       font-size: 0.85rem;
       color: var(--gray);
@@ -300,7 +316,7 @@
       flex-grow: 1;
       text-align: center;
     }
-    
+
     /* التحكم بالكمية - التصميم الجديد */
     .quantity-section {
       margin: 12px 0;
@@ -308,20 +324,20 @@
       flex-direction: column;
       align-items: center;
     }
-    
+
     .quantity-label {
       display: block;
       margin-bottom: 8px;
       font-weight: bold;
       color: var(--dark);
     }
-    
+
     .quantity-input-group {
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    
+
     .quantity-btn {
       width: 35px;
       height: 35px;
@@ -334,15 +350,15 @@
       justify-content: center;
       cursor: pointer;
       font-size: 1.1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: all 0.2s;
     }
-    
+
     .quantity-btn:hover {
       background: #4a6fb9;
       transform: scale(1.05);
     }
-    
+
     .quantity-input {
       flex: 1;
       padding: 10px;
@@ -351,10 +367,10 @@
       font-size: 1.1rem;
       text-align: center;
       font-weight: bold;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
       width: 70px;
     }
-    
+
     .add-to-cart {
       background: linear-gradient(135deg, var(--primary) 0%, #0048cc 100%);
       color: var(--white);
@@ -369,21 +385,21 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
       margin-top: 10px;
       font-weight: bold;
     }
-    
+
     .add-to-cart.unavailable {
-      background: var(--unavailable-text);
+      background: var(--red);
       cursor: not-allowed;
     }
-    
+
     .add-to-cart:hover {
       transform: scale(1.03);
       box-shadow: 0 5px 15px rgba(0, 98, 255, 0.3);
     }
-    
+
     /* سلة المشتريات - تصميم جديد للجوال */
     .cart-sidebar {
       position: fixed;
@@ -400,11 +416,11 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     .cart-sidebar.active {
       right: 0;
     }
-    
+
     .cart-header {
       display: flex;
       justify-content: space-between;
@@ -414,7 +430,7 @@
       border-bottom: 2px solid #e2e8f0;
       position: relative;
     }
-    
+
     .cart-header h3 {
       font-size: 1.4rem;
       color: var(--primary);
@@ -422,7 +438,7 @@
       text-align: center;
       padding-right: 30px;
     }
-    
+
     .close-cart {
       background: none;
       border: none;
@@ -433,13 +449,13 @@
       left: 10px;
       top: 10px;
     }
-    
+
     .cart-items {
       margin-bottom: 15px;
       flex-grow: 1;
       overflow-y: auto;
     }
-    
+
     .cart-item {
       display: flex;
       gap: 15px;
@@ -447,7 +463,7 @@
       border-bottom: 1px solid #e2e8f0;
       position: relative;
     }
-    
+
     .cart-item-image {
       width: 90px;
       height: 90px;
@@ -459,39 +475,39 @@
       padding: 5px;
       flex-shrink: 0;
     }
-    
+
     .cart-item-image img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
-    
+
     .cart-item-details {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    
+
     .cart-item-details h4 {
       font-size: 1rem;
       margin-bottom: 5px;
       color: var(--dark);
     }
-    
+
     .cart-item-details div {
       font-size: 0.95rem;
       color: var(--gray);
       margin: 5px 0;
     }
-    
+
     .cart-item-quantity {
       display: flex;
       align-items: center;
       gap: 8px;
       margin-top: 8px;
     }
-    
+
     .cart-total {
       font-weight: bold;
       font-size: 1.3rem;
@@ -501,7 +517,7 @@
       background: #edf2f7;
       border-radius: 10px;
     }
-    
+
     /* حقول معلومات الزبون */
     .customer-info {
       background: #edf2f7;
@@ -509,7 +525,7 @@
       border-radius: 10px;
       margin: 15px 0;
     }
-    
+
     .customer-info h4 {
       margin-bottom: 12px;
       color: var(--primary);
@@ -518,7 +534,7 @@
       align-items: center;
       gap: 8px;
     }
-    
+
     .customer-info input {
       width: 100%;
       padding: 12px;
@@ -526,15 +542,15 @@
       border: 1px solid #cbd5e0;
       border-radius: 8px;
       font-size: 1rem;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     }
-    
+
     .customer-info input:focus {
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
     }
-    
+
     .error-message {
       color: var(--red);
       font-size: 0.9rem;
@@ -542,7 +558,7 @@
       margin-bottom: 10px;
       display: none;
     }
-    
+
     /* زر الواتساب */
     .whatsapp-btn {
       position: fixed;
@@ -563,13 +579,21 @@
       cursor: pointer;
       font-size: 0.95rem;
     }
-    
+
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
-    
+
     /* زر سلة المشتريات */
     .cart-btn {
       position: fixed;
@@ -588,7 +612,7 @@
       cursor: pointer;
       font-size: 1.4rem;
     }
-    
+
     .cart-count {
       position: absolute;
       top: -5px;
@@ -603,9 +627,9 @@
       justify-content: center;
       font-size: 0.8rem;
       font-weight: bold;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    
+
     /* الفوتر */
     footer {
       background: var(--dark);
@@ -613,13 +637,13 @@
       padding: 30px 0;
       margin-top: 40px;
     }
-    
+
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
-    
+
     .store-info h3 {
       color: var(--secondary);
       margin-bottom: 15px;
@@ -628,15 +652,16 @@
       align-items: center;
       gap: 10px;
     }
-    
-    .store-info p, .store-hours p {
+
+    .store-info p,
+    .store-hours p {
       font-size: 0.95rem;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    
+
     .store-hours h3 {
       font-size: 1.4rem;
       color: var(--secondary);
@@ -645,7 +670,7 @@
       align-items: center;
       gap: 10px;
     }
-    
+
     /* طبقة التعتيم عند فتح السلة */
     .overlay {
       position: fixed;
@@ -657,11 +682,11 @@
       z-index: 999;
       display: none;
     }
-    
+
     .overlay.active {
       display: block;
     }
-    
+
     /* مؤشر التحميل */
     .loader {
       border: 4px solid #f3f3f3;
@@ -673,12 +698,17 @@
       margin: 0 auto;
       display: none;
     }
-    
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
-    
+
     /* زر نسخ الطلب */
     .copy-order {
       background: var(--primary);
@@ -695,9 +725,9 @@
       gap: 8px;
       font-size: 1rem;
       font-weight: bold;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
-    
+
     /* زر التأكيد */
     .confirm-btn {
       background: linear-gradient(135deg, var(--secondary) 0%, #058000 100%);
@@ -716,7 +746,7 @@
       font-size: 1.1rem;
       box-shadow: 0 4px 10px rgba(6, 150, 1, 0.3);
     }
-    
+
     /* إشعارات */
     .notification {
       position: fixed;
@@ -726,7 +756,7 @@
       color: white;
       padding: 15px 25px;
       border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       z-index: 2000;
       transform: translateY(-100px);
       opacity: 0;
@@ -734,16 +764,16 @@
       font-size: 1rem;
       max-width: 90%;
     }
-    
+
     .notification.show {
       transform: translateY(0);
       opacity: 1;
     }
-    
+
     .notification.error {
       background: var(--red);
     }
-    
+
     /* علامة غير متوفر */
     .unavailable-tag {
       background: var(--red);
@@ -753,38 +783,38 @@
       font-size: 0.8rem;
       margin-left: 5px;
     }
-    
+
     /* تحسينات متجاوبة إضافية */
     @media (max-width: 480px) {
       .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
         gap: 15px;
       }
-      
+
       .product-image {
         height: 150px;
         padding: 12px;
       }
-      
+
       .hero-banner {
         padding: 40px 10px;
       }
-      
+
       .hero-banner h1 {
         font-size: 1.4rem;
       }
-      
+
       .hero-banner p {
         font-size: 0.95rem;
       }
-      
+
       .whatsapp-btn {
         font-size: 0.9rem;
         padding: 10px 16px;
         bottom: 20px;
         left: 15px;
       }
-      
+
       .cart-btn {
         width: 55px;
         height: 55px;
@@ -792,99 +822,100 @@
         right: 15px;
         font-size: 1.3rem;
       }
-      
+
       .cart-item {
         flex-direction: column;
         align-items: flex-start;
         padding: 12px 0;
       }
-      
+
       .cart-item-image {
         width: 100%;
         height: 160px;
         max-height: 160px;
       }
-      
+
       .customer-info input {
         padding: 12px;
         font-size: 0.95rem;
       }
-      
+
       .close-cart {
         font-size: 1.4rem;
       }
-      
+
       .cart-header h3 {
         font-size: 1.3rem;
         padding-right: 35px;
       }
-      
+
       .cart-total {
         font-size: 1.2rem;
       }
-      
-      .confirm-btn, .copy-order {
+
+      .confirm-btn,
+      .copy-order {
         font-size: 1rem;
         padding: 13px;
       }
-      
+
       .quantity-input {
         padding: 8px;
         font-size: 0.95rem;
       }
-      
+
       .filter-container {
         grid-template-columns: 1fr;
       }
-      
+
       .category-buttons {
         overflow-x: auto;
         flex-wrap: nowrap;
         padding-bottom: 5px;
       }
-      
+
       /* تعديلات الجوال للسعر */
       .product-price {
         font-size: 1.2rem;
         padding: 8px 12px;
       }
-      
+
       .logo {
         font-size: 1.1rem;
       }
-      
+
       .logo-img {
         width: 50px;
         height: 50px;
       }
     }
-    
+
     /* تحسينات للشاشات المتوسطة */
     @media (min-width: 769px) and (max-width: 1024px) {
       .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       }
-      
+
       .product-image {
         height: 190px;
       }
     }
-    
+
     /* تحسينات لشاشات كبيرة */
     @media (min-width: 1025px) {
       .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       }
-      
+
       .product-image {
         height: 220px;
       }
-      
+
       .product-price {
         font-size: 1.4rem;
       }
     }
-    
+
     /* تعداد المنتجات في الزاوية العلوية اليسرى */
     .product-count {
       position: absolute;
@@ -899,10 +930,11 @@
     }
   </style>
 </head>
+
 <body>
   <!-- طبقة التعتيم -->
   <div class="overlay" id="overlay"></div>
-  
+
   <!-- الهيدر مع شعار محسن التباين -->
   <header>
     <div class="container">
@@ -929,14 +961,14 @@
         نوفر لكم أفضل الأجهزة المنزلية بجودة عالية وضمان مميز مع خدمة التوصيل السريع
       </p>
     </section>
-    
+
     <!-- شريط البحث والتصفية -->
     <div class="filter-container">
       <div class="search-bar">
         <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
         <button id="searchBtn"><i class="fas fa-search"></i></button>
       </div>
-      
+
       <div class="filter-bar">
         <select id="sortSelect">
           <option value="default">الترتيب الافتراضي</option>
@@ -947,7 +979,7 @@
         </select>
       </div>
     </div>
-    
+
     <!-- أزرار التصنيفات -->
     <div class="category-buttons">
       <button class="category-btn active" data-category="all">الكل</button>
@@ -963,7 +995,7 @@
       <!-- سيتم إضافة المنتجات ديناميكياً -->
     </section>
   </main>
-  
+
   <!-- الفوتر -->
   <footer>
     <div class="container">
@@ -974,7 +1006,7 @@
           <p><i class="fas fa-phone"></i> 07504003151</p>
           <p><i class="fas fa-envelope"></i> fakiriraq2022@gmail.com</p>
         </div>
-        
+
         <div class="store-hours">
           <h3><i class="fas fa-clock"></i> ساعات العمل</h3>
           <p>السبت - الخميس: 9 صباحاً - 10 مساءً</p>
@@ -983,18 +1015,18 @@
       </div>
     </div>
   </footer>
-  
+
   <!-- زر الواتساب -->
   <button class="whatsapp-btn" id="whatsappBtn">
     <i class="fab fa-whatsapp"></i> أطلب عبر واتساب
   </button>
-  
+
   <!-- زر سلة المشتريات -->
   <div class="cart-btn" id="cartBtn">
     <i class="fas fa-shopping-cart"></i>
     <span class="cart-count">0</span>
   </div>
-  
+
   <!-- سلة المشتريات -->
   <div class="cart-sidebar" id="cartSidebar">
     <div class="cart-header">
@@ -1003,7 +1035,7 @@
         <i class="fas fa-times"></i>
       </button>
     </div>
-    
+
     <div class="cart-items" id="cartItems">
       <!-- سيتم إضافة عناصر السلة هنا -->
       <div class="empty-cart" style="text-align: center; padding: 60px 0; color: var(--gray);">
@@ -1012,52 +1044,55 @@
         <p style="margin-top: 10px;">أضف منتجات لبدء التسوق</p>
       </div>
     </div>
-    
+
     <div class="cart-total" id="cartTotal">
       المجموع: $0
     </div>
-    
+
     <!-- حقول معلومات الزبون -->
     <div class="customer-info">
       <h4><i class="fas fa-user"></i> معلومات الزبون</h4>
       <input type="text" id="customerName" placeholder="الاسم الكامل">
       <div class="error-message" id="nameError">يرجى إدخال الاسم</div>
-      
+
       <input type="text" id="customerAddress" placeholder="العنوان التفصيلي">
       <div class="error-message" id="addressError">يرجى إدخال العنوان</div>
-      
+
       <input type="tel" id="customerPhone" placeholder="رقم الهاتف (اختياري)">
     </div>
-    
+
     <button class="confirm-btn" id="confirmOrderBtn">
       <i class="fas fa-check-circle"></i> تأكيد الطلب
     </button>
-    
+
     <div class="loader" id="orderLoader"></div>
-    
+
     <button class="copy-order" id="copyOrderBtn">
       <i class="fas fa-copy"></i> نسخ الطلب
     </button>
   </div>
-  
+
   <!-- إشعارات -->
   <div class="notification" id="notification">
     <span id="notificationText"></span>
   </div>
-  
+
   <script>
     // بيانات المتجر
     const storeName = "متجر فكير للأجهزة الكهربائية";
     const storeAddress = "اربيل 100متري قرب فندق كريستال";
     const storePhone = "+9647511456544";
-    
+
     // سلة المشتريات
     let cart = [];
-    
+
     // قائمة المنتجات
     let products = [];
     let displayedProducts = [];
-    
+
+    // وضع عرض الكمية (عند إدخال الرمز 1617)
+    let showQuantityMode = false;
+
     // عناصر DOM
     const cartBtn = document.getElementById('cartBtn');
     const closeCart = document.getElementById('closeCart');
@@ -1080,161 +1115,161 @@
     const orderLoader = document.getElementById('orderLoader');
     const sortSelect = document.getElementById('sortSelect');
     const categoryBtns = document.querySelectorAll('.category-btn');
-    
+
     // عناصر الإشعارات
     const notification = document.getElementById('notification');
     const notificationText = document.getElementById('notificationText');
-    
+
     // تهيئة المتجر
     function initStore() {
       // تحميل المنتجات
       loadProducts();
-      
+
       // تحميل السلة من localStorage
       const savedCart = localStorage.getItem('cart');
       if (savedCart) {
         cart = JSON.parse(savedCart);
         updateCartCount();
       }
-      
+
       // عرض المنتجات
       renderProducts();
     }
-    
+
     // تحميل المنتجات
     function loadProducts() {
       // المنتجات مع إضافة خاصية available
       products = [
-        {id: 1751444549647, name: "uno chefry", price: 115, image: "https://www.fakir.com.tr/uno-chefry-isti-hava-fritoz-airfryer-fakir-fakir-7302-41-B.jpg", description: "Air Fryer", available: false, category: "kitchen"},
-        {id: 1751444549648, name: "mono chefry ", price: 110, image: "https://www.soliton.az/images/articles/2024/02/14/20240214031059963_1.jpg", description: "Air Fryer", available: true, category: "kitchen"},
-        {id: 1751444549649, name: "Temper ", price: 106, image: "https://www.fakir.com.tr/temper-cay-makinesi-inox-fakir-7498-30-B.jpg", description: "Çay Makinesi", available: true, category: "coffee"},
-        {id: 1751444549650, name: "BOLT X PLUS AQUA", price: 299, image: "https://www.fakir.com.tr/bolt-x-plus-aqua-8472-dikey-sarjli-kablosuz-supurge-moon-gray-fakir-fakir-7303-41-B.jpg", description: "Rechargable Upright Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549651, name: "INOVATOR X PLUS | 7286", price: 180, image: "https://m.media-amazon.com/images/I/31BV15tZq+L.jpg", description: "Rechargable Upright Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549652, name: "WD 9 PURE CLEAN", price: 480, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBLk2InqawSStvfvC0ISLJOOzVxWDwueFG-Q&s", description: "Wet & Dry Cordless Vertical Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549653, name: "WD 7 PURE CLEAN", price: 358, image: "https://www.fakir.com.tr/wd-7-pure-clean-islak-kuru-dikey-sarjli-supurge-fakir-6802-42-B.jpg", description: "Wet & Dry Rechargable Upright Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549654, name: "WD 6 PURE CLEAN", price: 365, image: "https://www.fakir.com.tr/wd-6-pure-clean-2-in-1-islak-kuru-dikey-sarjli-supurge-fakir-7256-59-B.jpg", description: "Wet & Dry Cordless Vertical Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549655, name: "DARKY’S", price: 55, image: "https://fakirglobal.com/fakir-darkys-2-in-1-stick-and-hand-vacuum-cleaner-rosie-corded-handstick-vacuums-fakir-2137-26-B.jpg", description: "Corded Upright Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549656, name: "ROBERT RS 830 PLUS", price: 780, image: "https://www.fakir.com.tr/robert-rs-830-plus-robot-supurge-fakir-7504-59-B.jpg", description: "Robot Vacuum & Dust Collector", available: true, category: "cleaning"},
-        {id: 1751444549657, name: "ROBERT RS 780 PLUS", price: 566, image: "https://fakirglobal.com/fakir-robert-rs-780-plus-self-emptying-robot-vacuum-robot-vacuum-cleaner-fakir-821-54-B.png", description: "Robot Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549658, name: "ROBERT RS 770", price: 360, image: "https://fakirglobal.com/fakir-robert-rs-770-robot-vacuum-robot-vacuum-cleaner-fakir-253-50-O.jpg", description: "Robot Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549659, name: "BLACK VAC POWER TS 790", price: 138, image: "https://m.media-amazon.com/images/I/61AX5rpQiQL.jpg", description: "Vacuum Cleaner", available: false, category: "cleaning"},
-        {id: 1751444549660, name: "FREELANDER | RC 7088", price: 135, image: "https://www.fakir.com.tr/freelander-rc-7088-toz-torbasiz-turbo-aparatli-elektrikli-supurge-fakir-5121-40-B.webp", description: "Bagless Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549661, name: "FREELANDER | 6056", price: 135, image: "https://www.fakir.com.tr/fakir-freelander-bl-6056-supurge-slvrstn-fakir-0-7294-38-B.jpg", description: "Bagless Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549662, name: "21LT", price: 66, image: "https://www.elryan.com/img/600/600/resize/catalog/product/f/a/fakir-21lt-2000w.png", description: "Drum Type Vacuum Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549663, name: "SPIN STEAM ", price: 140, image: "https://www.fakir.com.tr/spin-steam-buharli-temizleyici-fakir-7507-59-B.jpg", description: "Steam Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549664, name: "DUO STEAM", price: 110, image: "https://www.fakir.com.tr/duo-steam-2-in-1-buharli-temizleyici-fakir-7311-59-B.jpg", description: "2 in 1 Steam Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549665, name: "ALINA CLEAN", price: 70, image: "https://fakirglobal.com/alina-clean-cok-fonksiyonlu-buharli-temizleyici-fakir-steam-cleaner-fakir-4272-51-B.png", description: "Steam Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549666, name: "MAX STEAM", price: 120, image: "https://www.fakir.com.tr/max-steam-buharli-temizleyici-fakir-7312-59-B.jpg", description: "Steam Cleaner", available: false, category: "cleaning"},
-        {id: 1751444549667, name: "PR 1018", price: 105, image: "https://www.fakir.com.tr/spot-cleaner-pr1018-vakumlu-temizleyici-fakir-7171-59-B.jpg", description: "Carpet & Sofa Spot Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549668, name: "PR 7020", price: 182, image: "https://www.fakir.com.tr/spot-cleaner-pr7020-buhar-leke-temizleyici-fakir-7043-59-B.jpg", description: "Steam & Spot Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549669, name: "PR 8038", price: 210, image: "https://www.fakir.com.tr/spot-cleaner-pr8038-buhar-leke-temizleyici-fakir-7048-59-B.jpg", description: "Steam & Spot Cleaner", available: true, category: "cleaning"},
-        {id: 1751444549670, name: "VKM 6018", price: 405, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/7/670b7964fc726f0057ce4b3d719991-65153.jpg", description: "Full Automatic Coffee Machine", available: true, category: "coffee"},
-        {id: 1751444549671, name: "BABILA", price: 127, image: "https://fakirglobal.com/fakir-babila-manual-espresso-makers-barista-style-espresso-cappuccino-machine-fakir-2222-32-B.jpg", description: "Espresso Coffee Machine", available: false, category: "coffee"},
-        {id: 1751444549672, name: "EPM 4018", price: 130, image: "https://hotiqdeals.com/image/cache/catalog/Screenshot%20(4598)-1000x1000h.png", description: "Espresso Machine", available: true, category: "coffee"},
-        {id: 1751444549673, name: "KM3019", price: 100, image: "https://hotiqdeals.com/image/cache/catalog/fakir-km3019-kapsul-kahve-makinasi-fakir-7461-60-O-1000x1000.jpg", description: "Capsule Coffee Machine", available: true, category: "coffee"},
-        {id: 1751444549674, name: "KAAVE UNO PRO", price: 125, image: "https://fakirglobal.com/fakir-kaave-uno-pro-turkish-coffee-maker-rosie-turkish-coffee-maker-fakir-544-35-B.jpg", description: "Turkish Coffee Maker", available: true, category: "coffee"},
-        {id: 1751444549675, name: "KAAVE DUAL PRO", price: 158, image: "https://fakirglobal.com/fakir-kaave-dual-pro-turkish-coffee-maker-anthracite-turkish-coffee-maker-fakir-159-31-B.png", description: "Turkish Coffee Maker", available: true, category: "coffee"},
-        {id: 1751444549676, name: "KAAVE STEEL", price: 80, image: "https://m.media-amazon.com/images/I/615l++44wFS._UF1000,1000_QL80_.jpg", description: "Turkish Coffee Maker", available: true, category: "coffee"},
-        {id: 1751444549677, name: "KAAVE TRIO", price: 90, image: "https://fakirglobal.com/fakir-kaave-trio-turkish-coffee-maker-with-ember-brewing-function-milk-rouge-turkish-coffee-maker-fakir-839-55-B.png", description: "Turkish Coffee Maker on Embers & With Milk", available: true, category: "coffee"},
-        {id: 1751444549678, name: "BASE", price: 60, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8p0_4QpMY8fslIIbHjs8rDFsNinhpUqMDpA&s", description: "Turkish Coffee Maker", available: false, category: "coffee"},
-        {id: 1751444549679, name: "AROMA GOURMET", price: 103, image: "https://www.fakir.com.tr/aroma-gourmet-filtre-kahve-makinesi-copper-fakir-6828-41-B.jpg", description: "Filter Coffee Machine", available: true, category: "coffee"},
-        {id: 1751444549680, name: "AROMATIC", price: 22, image: "https://www.elryan.com/img/600/600/resize/catalog/product/a/r/aromatic-kahvebaharat-ogutucusu-fakir-0-1296-24-o.png", description: "Grinder", available: true, category: "coffee"},
-        {id: 1751444549681, name: "SITARE AQUA", price: 125, image: "https://www.fakir.com.tr/fakir-sitare-aqua-buz-yapma-mak-beyaz-fakir-7482-60-B.jpg", description: "Ice Maker Machine", available: true, category: "home"},
-        {id: 1751444549682, name: "SITARE", price: 125, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLEx1j18zydqIAOyQ6lySEawYNaalLBAHvpQ&s", description: "Ice Maker Machine", available: true, category: "home"},
-        {id: 1751444549683, name: "HYDROP PRO", price: 150, image: "https://www.fakir.com.tr/fakir-hydrop-pro-su-sebili-gri-fakir-7459-60-B.jpg", description: "Water Dispenser", available: false, category: "home"},
-        {id: 1751444549684, name: "HYDROP SB1004", price: 115, image: "https://d2nmpl80xmejtd.cloudfront.net/Images/kKnKN4M4iHUEzY6oyslEODAM9qxIeQRPhInPzSYN.jpg", description: "Water Dispenser", available: false, category: "home"},
-        {id: 1751444549685, name: "BESTEA", price: 70, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5ngNye5Jyn97QVfRVAd4z3turOg9pxxHkQ&s", description: "Tea Maker", available: false, category: "coffee"},
-        {id: 1751444549686, name: "CHAIMOOD", price: 75, image: "https://www.fakir.com.tr/chaimood-cay-makinesi-rouge-fakir-0-6890-37-B.jpg", description: "Tea Maker", available: false, category: "coffee"},
-        {id: 1751444549687, name: "STEEL N MORE", price: 82, image: "https://www.fakir.com.tr/steel-n-more-tea-machine-inox-fakir-fakir-7297-40-B.jpg", description: "Tea Maker", available: true, category: "coffee"},
-        {id: 1751444549688, name: "ADELL", price: 31, image: "https://fakirglobal.com/fakir-adell-steel-kettle-rosie-kettle-fakir-2126-23-B.jpg", description: "Kettle", available: true, category: "coffee"},
-        {id: 1751444549689, name: "PERCY", price: 40, image: "https://www.fakir.com.tr/percy-su-isiticisi-fakir-6784-59-B.jpg", description: "Kettle", available: true, category: "coffee"},
-        {id: 1751444549690, name: "WK 1000", price: 25, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ayKYSAsWFqkV4YWQcMIrqbyYhADvIPZ4eA&s", description: "Kettle", available: true, category: "coffee"},
-        {id: 1751444549691, name: "WK 1101", price: 25, image: "https://elitoptimal.az/_next/image?url=https%3A%2F%2Fstatic.elitoptimal.az%2FElitOptimal%2F6b5d5d93-11c7-4b64-9803-f4a99ec820ba_Thumb.jpeg&w=3840&q=100", description: "Kettle", available: true, category: "coffee"},
-        {id: 1751444549692, name: "WK 1103", price: 25, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0LRM2ePkrYlIWDupOoZCUgMAzWafNwOrGTQ&s", description: "Kettle", available: false, category: "coffee"},
-        {id: 1751444549693, name: "PICARDI", price: 22, image: "https://www.soliton.az/images/articles/2025/01/31/20250131104322740_1.jpg", description: "Kettle", available: true, category: "coffee"},
-        {id: 1751444549694, name: "PASTEUR", price: 132, image: "https://cdn.evkur.com.tr/c/Product/thumbs/fakir1_py5g7x_500.jpg", description: "Smart Yoghurt Maker", available: true, category: "coffee"},
-        {id: 1751444549695, name: "PREMIUM CHEFRY", price: 209, image: "https://www.fakir.com.tr/premium-chefry-isti-hava-fritoz-airfryer-fakir-fakir-6853-41-B.jpg", description: "Deep Fryer", available: true, category: "kitchen"},
-        {id: 1751444549696, name: "NOTECOOK", price: 410, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9w9KXvo-wXNSPLbfB5fIZSeZ75N1C1Pt5LA&s", description: "Multifunctional-Cooker", available: true, category: "kitchen"},
-        {id: 1751444549697, name: "MILKYMOOTHIE", price: 300, image: "https://www.fakir.com.tr/milkymoothie-kisisel-blender-fakir-6643-59-B.webp", description: "Personel Blender", available: false, category: "kitchen"},
-        {id: 1751444549698, name: "PREMIUM ICY", price: 125, image: "https://www.fakir.com.tr/fakir-premium-icy-dondurma-yapma-mak-beyaz-fakir-7996-59-B.jpg", description: "Ice Cream Machine", available: false, category: "kitchen"},
-        {id: 1751444549699, name: "SPEED MULTI", price: 83, image: "https://www.fakir.com.tr/speed-multi-blender-seti-black-copper-fakir-fakir-7708-41-B.jpg", description: "Blender Set", available: true, category: "kitchen"},
-        {id: 1751444549700, name: "SPEED QUADRO", price: 73, image: "https://fakirglobal.com/fakir-speed-quadro-hand-blender-set-black-copper-hand-blender-fakir-2921-56-B.png", description: "Blender Set", available: true, category: "kitchen"},
-        {id: 1751444549701, name: "PRO INTERMIX", price: 83, image: "https://fakirglobal.com/fakir-pro-intermix-hand-blender-set-hand-blender-fakir-2793-59-O.png", description: "Blender Set", available: true, category: "kitchen"},
-        {id: 1751444549702, name: "Mr. CHEF QUADRO", price: 80, image: "https://www.elryan.com/img/600/600/resize/catalog/product/f/a/fakir-blender-mr.chef_.jpg", description: "Blender Set", available: true, category: "kitchen"},
-        {id: 1751444549703, name: "SPEED LUCCA", price: 47, image: "https://fakirglobal.com/fakir-speed-lucca-hand-blender-set-black-copper-hand-blender-fakir-863-56-O.png", description: "Blender Set", available: true, category: "kitchen"},
-        {id: 1751444549704, name: "CHOP N BLEND", price: 53, image: "https://images.migrosone.com/sanalmarket/product/39040034/39040034-767315-1650x1650.jpg", description: "Personel Blender", available: true, category: "kitchen"},
-        {id: 1751444549705, name: "CHEF PASTRO", price: 380, image: "https://www.fakir.com.tr/chef-pastro-mutfak-sefi-black-fakir-7891-58-B.jpg", description: "Stand Mixer", available: true, category: "kitchen"},
-        {id: 1751444549706, name: "FLOURISH", price: 105, image: "https://static.elitoptimal.az/ElitOptimal/9c185256-2ff8-4dbf-b198-8b365f289a00_Thumb.jpeg", description: "Stand Mixer", available: true, category: "kitchen"},
-        {id: 1751444549707, name: "ARYA", price: 140, image: "https://www.fakir.com.tr/arya-mutfak-sefi-rosie-fakir-6831-41-B.jpg", description: "Stand Mixer", available: true, category: "kitchen"},
-        {id: 1751444549708, name: "MAGICHEF", price: 83, image: "https://fakirglobal.com/fakir-magichef-stand-mixer-kitchen-chef-fakir-2960-60-K.png", description: "Stand Mixer", available: true, category: "kitchen"},
-        {id: 1751444549709, name: "CULINA CHEF", price: 135, image: "https://fakirglobal.com/fakir-culina-chef-stand-mixer-rosie-kitchen-chef-fakir-1710-28-O.webp", description: "Stand Mixer", available: true, category: "kitchen"},
-        {id: 1751444549710, name: "N JOY", price: 90, image: "https://fakirglobal.com/fakir-n-joy-grill-sandwich-maker-rosie-grill-sandwich-maker-fakir-221-42-O.jpg", description: "Grill & Toaster", available: true, category: "kitchen"},
-        {id: 1751444549711, name: "GRILL EXPERT PRO", price: 138, image: "https://d3dwmp62mpdwf0.cloudfront.net/images/detailed/32/2Bazzaargrill-expert-pro-izgara-tost-makinesi-fakir-5838-41-B.webp?t=1708956088", description: "Grill & Toaster", available: false, category: "kitchen"},
-        {id: 1751444549712, name: "GRILL EXPERT ELITE", price: 127, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/6/66ab284b3a6e48002032f78d041468-88323.jpg", description: "Grill & Toaster", available: false, category: "kitchen"},
-        {id: 1751444549713, name: "GRILL EXPERT SMART", price: 175, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU7asOGmQaq_4JaXGIHn4gpAeHx521ciHDkw&s", description: "Grill & Toaster", available: true, category: "kitchen"},
-        {id: 1751444549714, name: "ALBA", price: 25, image: "https://fakirglobal.com/fakir-alba-pop-up-toaster-rouge-pop-up-toaster-fakir-4160-44-B.png", description: "Toaster", available: true, category: "kitchen"},
-        {id: 1751444549715, name: "LADIVA", price: 40, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOaC6bNJNp6gd8f0HGpKI5X7ZfVTXryihuNQ&s", description: "Toaster", available: true, category: "kitchen"},
-        {id: 1751444549716, name: "MOLLY", price: 13, image: "https://www.elryan.com/img/600/600/resize/catalog/product/m/o/molly-dijital-mutfak-tartisi-turuncu-fakir-3505-24-o.png", description: "Digital Kitchen Scale", available: true, category: "home"},
-        {id: 1751444549717, name: "VITALY", price: 100, image: "https://fakirglobal.com/fakir-vitaly-fakir-vitaly-slow-juicer-whole-fruit-juicer-fakir-123-25-B.png", description: "Slow Juicer", available: false, category: "kitchen"},
-        {id: 1751444549718, name: "JUICE MAX", price: 90, image: "https://fakirglobal.com/fakir-juice-max-juice-extractor-whole-fruit-juicer-fakir-509-93-B.png", description: "Juice Extracto", available: true, category: "kitchen"},
-        {id: 1751444549719, name: "MIX IT EASY", price: 37, image: "https://strgimgr.umico.az/sized/1680/23590-5332701c88f532ae08baf307c49621ad.jpg", description: "Personal Blender", available: true, category: "kitchen"},
-        {id: 1751444549720, name: "MIXYPRO", price: 49, image: "https://www.elryan.com/img/600/600/resize/catalog/product/m/i/mixypro-blender-fakir-4059-40-b.jpg", description: "Table Blender", available: true, category: "kitchen"},
-        {id: 1751444549721, name: "MIXYPRO PLUS", price: 70, image: "https://iran-shop.co/wp-content/uploads/2024/11/Untitled-2-8.jpg", description: "Table Blender & Grinder", available: true, category: "kitchen"},
-        {id: 1751444549722, name: "GUVECH", price: 75, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/7/675aa98f657d0d0020d675f054212fak-72207.jpg", description: "Multicooker", available: false, category: "kitchen"},
-        {id: 1751444549723, name: "TORQUE 1800", price: 115, image: "https://www.elryan.com/img/600/600/resize/catalog/product/t/o/torque-1800-kiyma-makinasi-fakir-398-23-b.png", description: "Meat Grinder", available: false, category: "kitchen"},
-        {id: 1751444549724, name: "TORQUE PRO 2000", price: 140, image: "https://manamohome.com/images/thumbs/0004327_fakir-torque-pro-2000-meat-grander_625.jpeg", description: "Meat Grinder", available: false, category: "kitchen"},
-        {id: 1751444549725, name: "STEEL PROOF 1800", price: 110, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQlKf53Xptxgz2ja9cHmpD8GRk3JfddTHt4A&s", description: "Meat Grinder", available: false, category: "kitchen"},
-        {id: 1751444549726, name: "ION BOOSTER", price: 98, image: "https://assets.smartelectronics.az/Assets/cdn-cgi?path=ab6ab19d-8f93-4c11-a18a-bb64c581103b.webp", description: "Hair Dryer", available: true, category: "hair"},
-        {id: 1751444549727, name: "SAPPHIRE LUX", price: 165, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2q30MroPs36HGQa1hZC9pGhMGazHNG-jENQ&s", description: "Hair Dryer", available: true, category: "hair"},
-        {id: 1751444549728, name: "PRO ION SHOT", price: 130, image: "https://www.fakir.com.tr/pro-ion-shot-sac-kurutma-makinesi-fakir-6794-58-B.jpg", description: "Hair Dryer", available: true, category: "hair"},
-        {id: 1751444549729, name: "T-SHOT", price: 125, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/7/675aa98f657d0d0020d675f025357t-s-27127.jpg", description: "Hair Dryer", available: true, category: "hair"},
-        {id: 1751444549730, name: "CAPELLO", price: 19, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzLwXFdr6yvcuHp5xi9uS0dOHftv43bnURaA&s", description: "Hair Dryer", available: true, category: "hair"},
-        {id: 1751444549731, name: "GLORIA", price: 26, image: "https://cdn.akakce.com/fakir/fakir-gloria-2200-w-z.jpg", description: "Hair Dryer", available: true, category: "hair"},
-        {id: 1751444549732, name: "ION FUSION Hair Straightener", price: 42, image: "https://manamohome.com/images/thumbs/0014957_fakir-ion-fusion-straightener_625.jpeg", description: "Hair Straightener", available: true, category: "hair"},
-        {id: 1751444549733, name: "SAPPHIRE LUXE STEAM", price: 73, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq6na4VytzZjXT2a4wVOEfYwFF38-dIwsvww&s", description: "Hair Straightener", available: true, category: "hair"},
-        {id: 1751444549734, name: "LYRIC SONG", price: 22, image: "https://www.fakir.com.tr/lyric-song-sac-duzlestirici-beyaz-rose-fakir-5932-32-B.webp", description: "Hair Straightener", available: true, category: "hair"},
-        {id: 1751444549735, name: "LYRIC VOICE", price: 28, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqCftlKhayhiYf3JS_gmctnp9xvWVzfvcTSA&s", description: "Hair Straightener", available: true, category: "hair"},
-        {id: 1751444549736, name: "HARVEY", price: 18, image: "https://www.linstashop.com/image/product/18675/LARGE/0/42743?t=1720979352", description: "Hair Straightener", available: true, category: "hair"},
-        {id: 1751444549737, name: "AIR FORM", price: 290, image: "https://www.fakir.com.tr/fakir-airform-sac-sekillendirici-set-fakir-7214-59-B.jpg", description: "Hair SET", available: false, category: "hair"},
-        {id: 1751444549738, name: "ION FUSION BEACH WAVES WAG", price: 39, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTmNrwTkD-bkYmc0zgUjB-casqgOb_jgMZaw&s", description: "Hair Curler", available: true, category: "hair"},
-        {id: 1751444549739, name: "ILLUSION EFFECT", price: 20, image: "https://www.fakir.com.tr/illusion-effect-sac-duz-firca-antrasit-fakir-6936-28-B.jpg", description: "Ionic Hair Straightening Brush", available: false, category: "hair"},
-        {id: 1751444549740, name: "ION FUSION THREE - BARREL WATER WAVE", price: 49, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6FR_W9mnHGEyME-l3_cM4pq33Xw5oXC_zxw&s", description: "Hair Curle", available: true, category: "hair"},
-        {id: 1751444549741, name: "ION FUSION Hair Curler", price: 39, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvYFRIy4P_81oYXkqjB8fuz7xYx6oo2F8gdQ&s", description: "Hair Curle", available: true, category: "hair"},
-        {id: 1751444549742, name: "SAPPHIRE LUXE Wag Curler", price: 55, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwF0bdIS3FEG1T5T-Q71ruTecN5jvY12wvw&s", description: "Hair Curle", available: true, category: "hair"},
-        {id: 1751444549743, name: "ESTELLE", price: 15, image: "https://fakirglobal.com/fakir-estelle-curling-iron-black-chrome-rosie-curling-iron-fakir-2143-23-B.jpg", description: "Hair Curle", available: false, category: "hair"},
-        {id: 1751444549744, name: "LYRIC POEM", price: 22, image: "https://www.elryan.com/img/600/600/resize/catalog/product/l/y/lyric-poem-sac-masasi-byz-rose-chrome-fakir-2239-32-o.png", description: "Hair Curle", available: true, category: "hair"},
-        {id: 1751444549745, name: "EXECUTE 2 BLADE", price: 33, image: "https://cdn.dsmcdn.com/ty1442/product/media/images/prod/QC/20240726/13/5af858ad-3ea8-3cb6-a32e-7cfa7ae423a6/1_org_zoom.jpg", description: "15 in 1 Washable Men’s Care Kit", available: true, category: "home"},
-        {id: 1751444549746, name: "STUBBY", price: 17, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGZ7RPnchr17tcYChoABV4UnurEHbqvjfSoA&s", description: "Beard Trimmer", available: true, category: "home"},
-        {id: 1751444549747, name: "HERCULES", price: 15, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4KqYkEEgkD93I6ZBqo4XQjyuE43yG60YEdQ&s", description: "Glass Body Analysis Scale", available: true, category: "home"},
-        {id: 1751444549748, name: "ELEGANCE DBS 8010", price: 172, image: "https://www.fakir.com.tr/elegance-dbs-8010-buhar-jeneratorlu-utu-gold-fakir-7104-59-B.jpg", description: "Steam Generator Iron", available: true, category: "home"},
-        {id: 1751444549749, name: "VALENS", price: 36, image: "https://assets.smartelectronics.az/Assets/cdn-cgi?path=37cc2b15-1668-4033-a88f-dbec522e7624.webp", description: "Steam Iron", available: true, category: "home"},
-        {id: 1751444549750, name: "PERLE", price: 42, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/6/66ab284b3a6e48002032f78d4918214-42347.jpg", description: "Steam Iron", available: true, category: "home"},
-        {id: 1751444549751, name: "RUMY", price: 39, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs6zzoYwQx9iP9Cxg2qSJBecN0bydP8t2PIg&s", description: "Garment Steamer", available: false, category: "home"},
-        {id: 1751444549752, name: "SKYFALL", price: 54, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDrTA2UKtlJEClw6t4efvnBm3-F9NXMxB07g&s", description: "Steam Iron", available: false, category: "home"},
-        {id: 1751444549753, name: "SKYWALK", price: 45, image: "https://beirutic.com/wp-content/uploads/2024/02/Screenshot-2024-02-06-093318.png", description: "Steam Iron", available: true, category: "home"},
-        {id: 1751444549754, name: "SKYGO", price: 36, image: "https://www.elryan.com/img/600/600/resize/catalog/product/f/a/fakir-ironing-skygo-2800w.png", description: "Steam Iron", available: false, category: "home"},
-        {id: 1751444549755, name: "SPRING", price: 49, image: "https://www.fakir.com.tr/spring-buharli-utu-gul-kurusu-fakir-7284-26-B.jpg", description: "Steam Iron", available: true, category: "home"},
-        {id: 1751444549756, name: "MERCY", price: 34, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZiq6RW9e7eb6NIRUeRM7wmS6zwkHG4-yRg&s", description: "Steam Iron", available: true, category: "home"},
-        {id: 1751444549757, name: "FLYJET", price: 34, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfekJXT9g0YKFT3CDFqz-Laa-ynGZljJ7x5w&s", description: "Steam Iron", available: true, category: "home"},
-        {id: 1751444549758, name: "DRYWIND", price: 335, image: "https://www.fakir.com.tr/drywind-nem-alma-cihazi-fakir-6103-40-B.webp", description: "Dehumidifier", available: true, category: "home"},
-        {id: 1751444549759, name: "LUMINOSO SMART PLUS", price: 265, image: "https://fakirglobal.com/fakir-luminoso-smart-plus-air-purifier-air-purifier-fakir-269-53-O.jpg", description: "Air Purifier", available: true, category: "home"},
-        {id: 1751444549760, name: "AIRBEE", price: 38, image: "https://productimages.hepsiburada.net/s/56/375-375/11247249981490.jpg", description: "Car Air Purifier", available: true, category: "home"},
-        {id: 1751444549761, name: "AQUA GIO", price: 126, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxpuWOcNUsSmisLV9jM9Dhu70a21jq-erk3g&s", description: "Hydrogen Water Generator", available: true, category: "home"},
-        {id: 1751444549762, name: "VIGOR PLUS", price: 237, image: "https://pimcdn.sharafdg.com/images/S100610754_1?1703654688", description: "Air Purifier", available: true, category: "home"},
-        {id: 1751444549763, name: "RF-11 TURBO PLUS", price: 100, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIYc_XGFmJdW6O9uTkEWqEHJ0tZYKJWgMfYA&s", description: "Oil Filled Radiator", available: true, category: "home"},
-        {id: 1751444549764, name: "AIR COOLER VK 8020", price: 138, image: "https://www.fakir.com.tr/fakir-air-cooler-vk-8020-fakir-7908-60-O.jpg", description: "Air Cooler", available: true, category: "home"},
-        {id: 1751444549765, name: "TVL 90 S", price: 125, image: "https://fakirglobal.com/fakir-tvl-90-s-tower-fan-tower-fans-fakir-320-91-B.jpg", description: "Tower Fan", available: true, category: "home"},
-        {id: 1751444549766, name: "STAND FAN SV1060", price: 48, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnXDBZCjHIubmVWpoh2s7S0vdsiOleU60IDA&s", description: "Stand Fan", available: false, category: "home"},
-        {id: 1751444549767, name: "STAND FAN SV50D9", price: 58, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/5/659688fe28f069001952402d97119fak-96175.jpg", description: "Stand Fan", available: true, category: "home"},
-        {id: 1751444549768, name: "PETPARD WF-01", price: 60, image: "https://www.fakir.com.tr/petpard-ultra-sessiz-akili-kedi-kopek-su-pinari-fakir-7506-59-B.jpg", description: "Water Fountain", available: true, category: "home"},
-        {id: 1751444549769, name: "PETPARD PFD-01", price: 65, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGD1tC061maeTKYR_zm5dRJtwpjh8tYlTvmQ&s", description: "Pet Feeder", available: true, category: "home"},      ];
+        { id: 1751444549647, name: "uno chefry", price: 115, image: "https://www.fakir.com.tr/uno-chefry-isti-hava-fritoz-airfryer-fakir-fakir-7302-41-B.jpg", description: "Air Fryer", available: false, category: "kitchen", quantity: 12 },
+        { id: 1751444549648, name: "mono chefry ", price: 110, image: "https://www.soliton.az/images/articles/2024/02/14/20240214031059963_1.jpg", description: "Air Fryer", available: true, category: "kitchen", quantity: 8 },
+        { id: 1751444549649, name: "Temper ", price: 106, image: "https://www.fakir.com.tr/temper-cay-makinesi-inox-fakir-7498-30-B.jpg", description: "Çay Makinesi", available: true, category: "coffee", quantity: 15 },
+        { id: 1751444549650, name: "BOLT X PLUS AQUA", price: 299, image: "https://www.fakir.com.tr/bolt-x-plus-aqua-8472-dikey-sarjli-kablosuz-supurge-moon-gray-fakir-fakir-7303-41-B.jpg", description: "Rechargable Upright Vacuum Cleaner", available: true, category: "cleaning", quantity: 5 },
+        { id: 1751444549651, name: "INOVATOR X PLUS | 7286", price: 180, image: "https://m.media-amazon.com/images/I/31BV15tZq+L.jpg", description: "Rechargable Upright Vacuum Cleaner", available: true, category: "cleaning", quantity: 7 },
+        { id: 1751444549652, name: "WD 9 PURE CLEAN", price: 480, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBLk2InqawSStvfvC0ISLJOOzVxWDwueFG-Q&s", description: "Wet & Dry Cordless Vertical Vacuum Cleaner", available: true, category: "cleaning", quantity: 3 },
+        { id: 1751444549653, name: "WD 7 PURE CLEAN", price: 358, image: "https://www.fakir.com.tr/wd-7-pure-clean-islak-kuru-dikey-sarjli-supurge-fakir-6802-42-B.jpg", description: "Wet & Dry Rechargable Upright Vacuum Cleaner", available: true, category: "cleaning", quantity: 6 },
+        { id: 1751444549654, name: "WD 6 PURE CLEAN", price: 365, image: "https://www.fakir.com.tr/wd-6-pure-clean-2-in-1-islak-kuru-dikey-sarjli-supurge-fakir-7256-59-B.jpg", description: "Wet & Dry Cordless Vertical Vacuum Cleaner", available: true, category: "cleaning", quantity: 4 },
+        { id: 1751444549655, name: "DARKY’S", price: 55, image: "https://fakirglobal.com/fakir-darkys-2-in-1-stick-and-hand-vacuum-cleaner-rosie-corded-handstick-vacuums-fakir-2137-26-B.jpg", description: "Corded Upright Vacuum Cleaner", available: true, category: "cleaning", quantity: 9 },
+        { id: 1751444549656, name: "ROBERT RS 830 PLUS", price: 780, image: "https://www.fakir.com.tr/robert-rs-830-plus-robot-supurge-fakir-7504-59-B.jpg", description: "Robot Vacuum & Dust Collector", available: true, category: "cleaning", quantity: 2 },
+        { id: 1751444549657, name: "ROBERT RS 780 PLUS", price: 566, image: "https://fakirglobal.com/fakir-robert-rs-780-plus-self-emptying-robot-vacuum-robot-vacuum-cleaner-fakir-821-54-B.png", description: "Robot Vacuum Cleaner", available: true, category: "cleaning", quantity: 3 },
+        { id: 1751444549658, name: "ROBERT RS 770", price: 360, image: "https://fakirglobal.com/fakir-robert-rs-770-robot-vacuum-robot-vacuum-cleaner-fakir-253-50-O.jpg", description: "Robot Vacuum Cleaner", available: true, category: "cleaning", quantity: 5 },
+        { id: 1751444549659, name: "BLACK VAC POWER TS 790", price: 138, image: "https://m.media-amazon.com/images/I/61AX5rpQiQL.jpg", description: "Vacuum Cleaner", available: false, category: "cleaning", quantity: 0 },
+        { id: 1751444549660, name: "FREELANDER | RC 7088", price: 135, image: "https://www.fakir.com.tr/freelander-rc-7088-toz-torbasiz-turbo-aparatli-elektrikli-supurge-fakir-5121-40-B.webp", description: "Bagless Vacuum Cleaner", available: true, category: "cleaning", quantity: 11 },
+        { id: 1751444549661, name: "FREELANDER | 6056", price: 135, image: "https://www.fakir.com.tr/fakir-freelander-bl-6056-supurge-slvrstn-fakir-0-7294-38-B.jpg", description: "Bagless Vacuum Cleaner", available: true, category: "cleaning", quantity: 8 },
+        { id: 1751444549662, name: "21LT", price: 66, image: "https://www.elryan.com/img/600/600/resize/catalog/product/f/a/fakir-21lt-2000w.png", description: "Drum Type Vacuum Cleaner", available: true, category: "cleaning", quantity: 14 },
+        { id: 1751444549663, name: "SPIN STEAM ", price: 140, image: "https://www.fakir.com.tr/spin-steam-buharli-temizleyici-fakir-7507-59-B.jpg", description: "Steam Cleaner", available: true, category: "cleaning", quantity: 7 },
+        { id: 1751444549664, name: "DUO STEAM", price: 110, image: "https://www.fakir.com.tr/duo-steam-2-in-1-buharli-temizleyici-fakir-7311-59-B.jpg", description: "2 in 1 Steam Cleaner", available: true, category: "cleaning", quantity: 9 },
+        { id: 1751444549665, name: "ALINA CLEAN", price: 70, image: "https://fakirglobal.com/alina-clean-cok-fonksiyonlu-buharli-temizleyici-fakir-steam-cleaner-fakir-4272-51-B.png", description: "Steam Cleaner", available: true, category: "cleaning", quantity: 6 },
+        { id: 1751444549666, name: "MAX STEAM", price: 120, image: "https://www.fakir.com.tr/max-steam-buharli-temizleyici-fakir-7312-59-B.jpg", description: "Steam Cleaner", available: false, category: "cleaning", quantity: 0 },
+        { id: 1751444549667, name: "PR 1018", price: 105, image: "https://www.fakir.com.tr/spot-cleaner-pr1018-vakumlu-temizleyici-fakir-7171-59-B.jpg", description: "Carpet & Sofa Spot Cleaner", available: true, category: "cleaning", quantity: 8 },
+        { id: 1751444549668, name: "PR 7020", price: 182, image: "https://www.fakir.com.tr/spot-cleaner-pr7020-buhar-leke-temizleyici-fakir-7043-59-B.jpg", description: "Steam & Spot Cleaner", available: true, category: "cleaning", quantity: 4 },
+        { id: 1751444549669, name: "PR 8038", price: 210, image: "https://www.fakir.com.tr/spot-cleaner-pr8038-buhar-leke-temizleyici-fakir-7048-59-B.jpg", description: "Steam & Spot Cleaner", available: true, category: "cleaning", quantity: 3 },
+        { id: 1751444549670, name: "VKM 6018", price: 405, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/7/670b7964fc726f0057ce4b3d719991-65153.jpg", description: "Full Automatic Coffee Machine", available: true, category: "coffee", quantity: 5 },
+        { id: 1751444549671, name: "BABILA", price: 127, image: "https://fakirglobal.com/fakir-babila-manual-espresso-makers-barista-style-espresso-cappuccino-machine-fakir-2222-32-B.jpg", description: "Espresso Coffee Machine", available: false, category: "coffee", quantity: 0 },
+        { id: 1751444549672, name: "EPM 4018", price: 130, image: "https://hotiqdeals.com/image/cache/catalog/Screenshot%20(4598)-1000x1000h.png", description: "Espresso Machine", available: true, category: "coffee", quantity: 7 },
+        { id: 1751444549673, name: "KM3019", price: 100, image: "https://hotiqdeals.com/image/cache/catalog/fakir-km3019-kapsul-kahve-makinasi-fakir-7461-60-O-1000x1000.jpg", description: "Capsule Coffee Machine", available: true, category: "coffee", quantity: 10 },
+        { id: 1751444549674, name: "KAAVE UNO PRO", price: 125, image: "https://fakirglobal.com/fakir-kaave-uno-pro-turkish-coffee-maker-rosie-turkish-coffee-maker-fakir-544-35-B.jpg", description: "Turkish Coffee Maker", available: true, category: "coffee", quantity: 15 },
+        { id: 1751444549675, name: "KAAVE DUAL PRO", price: 158, image: "https://fakirglobal.com/fakir-kaave-dual-pro-turkish-coffee-maker-anthracite-turkish-coffee-maker-fakir-159-31-B.png", description: "Turkish Coffee Maker", available: true, category: "coffee", quantity: 8 },
+        { id: 1751444549676, name: "KAAVE STEEL", price: 80, image: "https://m.media-amazon.com/images/I/615l++44wFS._UF1000,1000_QL80_.jpg", description: "Turkish Coffee Maker", available: true, category: "coffee", quantity: 12 },
+        { id: 1751444549677, name: "KAAVE TRIO", price: 90, image: "https://fakirglobal.com/fakir-kaave-trio-turkish-coffee-maker-with-ember-brewing-function-milk-rouge-turkish-coffee-maker-fakir-839-55-B.png", description: "Turkish Coffee Maker on Embers & With Milk", available: true, category: "coffee", quantity: 6 },
+        { id: 1751444549678, name: "BASE", price: 60, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8p0_4QpMY8fslIIbHjs8rDFsNinhpUqMDpA&s", description: "Turkish Coffee Maker", available: false, category: "coffee", quantity: 0 },
+        { id: 1751444549679, name: "AROMA GOURMET", price: 103, image: "https://www.fakir.com.tr/aroma-gourmet-filtre-kahve-makinesi-copper-fakir-6828-41-B.jpg", description: "Filter Coffee Machine", available: true, category: "coffee", quantity: 9 },
+        { id: 1751444549680, name: "AROMATIC", price: 22, image: "https://www.elryan.com/img/600/600/resize/catalog/product/a/r/aromatic-kahvebaharat-ogutucusu-fakir-0-1296-24-o.png", description: "Grinder", available: true, category: "coffee", quantity: 20 },
+        { id: 1751444549681, name: "SITARE AQUA", price: 125, image: "https://www.fakir.com.tr/fakir-sitare-aqua-buz-yapma-mak-beyaz-fakir-7482-60-B.jpg", description: "Ice Maker Machine", available: true, category: "home", quantity: 4 },
+        { id: 1751444549682, name: "SITARE", price: 125, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLEx1j18zydqIAOyQ6lySEawYNaalLBAHvpQ&s", description: "Ice Maker Machine", available: true, category: "home", quantity: 3 },
+        { id: 1751444549683, name: "HYDROP PRO", price: 150, image: "https://www.fakir.com.tr/fakir-hydrop-pro-su-sebili-gri-fakir-7459-60-B.jpg", description: "Water Dispenser", available: false, category: "home", quantity: 0 },
+        { id: 1751444549684, name: "HYDROP SB1004", price: 115, image: "https://d2nmpl80xmejtd.cloudfront.net/Images/kKnKN4M4iHUEzY6oyslEODAM9qxIeQRPhInPzSYN.jpg", description: "Water Dispenser", available: false, category: "home", quantity: 0 },
+        { id: 1751444549685, name: "BESTEA", price: 70, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5ngNye5Jyn97QVfRVAd4z3turOg9pxxHkQ&s", description: "Tea Maker", available: false, category: "coffee", quantity: 0 },
+        { id: 1751444549686, name: "CHAIMOOD", price: 75, image: "https://www.fakir.com.tr/chaimood-cay-makinesi-rouge-fakir-0-6890-37-B.jpg", description: "Tea Maker", available: false, category: "coffee", quantity: 0 },
+        { id: 1751444549687, name: "STEEL N MORE", price: 82, image: "https://www.fakir.com.tr/steel-n-more-tea-machine-inox-fakir-fakir-7297-40-B.jpg", description: "Tea Maker", available: true, category: "coffee", quantity: 8 },
+        { id: 1751444549688, name: "ADELL", price: 31, image: "https://fakirglobal.com/fakir-adell-steel-kettle-rosie-kettle-fakir-2126-23-B.jpg", description: "Kettle", available: true, category: "coffee", quantity: 15 },
+        { id: 1751444549689, name: "PERCY", price: 40, image: "https://www.fakir.com.tr/percy-su-isiticisi-fakir-6784-59-B.jpg", description: "Kettle", available: true, category: "coffee", quantity: 12 },
+        { id: 1751444549690, name: "WK 1000", price: 25, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ayKYSAsWFqkV4YWQcMIrqbyYhADvIPZ4eA&s", description: "Kettle", available: true, category: "coffee", quantity: 18 },
+        { id: 1751444549691, name: "WK 1101", price: 25, image: "https://elitoptimal.az/_next/image?url=https%3A%2F%2Fstatic.elitoptimal.az%2FElitOptimal%2F6b5d5d93-11c7-4b64-9803-f4a99ec820ba_Thumb.jpeg&w=3840&q=100", description: "Kettle", available: true, category: "coffee", quantity: 10 },
+        { id: 1751444549692, name: "WK 1103", price: 25, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0LRM2ePkrYlIWDupOoZCUgMAzWafNwOrGTQ&s", description: "Kettle", available: false, category: "coffee", quantity: 0 },
+        { id: 1751444549693, name: "PICARDI", price: 22, image: "https://www.soliton.az/images/articles/2025/01/31/20250131104322740_1.jpg", description: "Kettle", available: true, category: "coffee", quantity: 14 },
+        { id: 1751444549694, name: "PASTEUR", price: 132, image: "https://cdn.evkur.com.tr/c/Product/thumbs/fakir1_py5g7x_500.jpg", description: "Smart Yoghurt Maker", available: true, category: "coffee", quantity: 7 },
+        { id: 1751444549695, name: "PREMIUM CHEFRY", price: 209, image: "https://www.fakir.com.tr/premium-chefry-isti-hava-fritoz-airfryer-fakir-fakir-6853-41-B.jpg", description: "Deep Fryer", available: true, category: "kitchen", quantity: 5 },
+        { id: 1751444549696, name: "NOTECOOK", price: 410, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9w9KXvo-wXNSPLbfB5fIZSeZ75N1C1Pt5LA&s", description: "Multifunctional-Cooker", available: true, category: "kitchen", quantity: 3 },
+        { id: 1751444549697, name: "MILKYMOOTHIE", price: 300, image: "https://www.fakir.com.tr/milkymoothie-kisisel-blender-fakir-6643-59-B.webp", description: "Personel Blender", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549698, name: "PREMIUM ICY", price: 125, image: "https://www.fakir.com.tr/fakir-premium-icy-dondurma-yapma-mak-beyaz-fakir-7996-59-B.jpg", description: "Ice Cream Machine", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549699, name: "SPEED MULTI", price: 83, image: "https://www.fakir.com.tr/speed-multi-blender-seti-black-copper-fakir-fakir-7708-41-B.jpg", description: "Blender Set", available: true, category: "kitchen", quantity: 6 },
+        { id: 1751444549700, name: "SPEED QUADRO", price: 73, image: "https://fakirglobal.com/fakir-speed-quadro-hand-blender-set-black-copper-hand-blender-fakir-2921-56-B.png", description: "Blender Set", available: true, category: "kitchen", quantity: 8 },
+        { id: 1751444549701, name: "PRO INTERMIX", price: 83, image: "https://fakirglobal.com/fakir-pro-intermix-hand-blender-set-hand-blender-fakir-2793-59-O.png", description: "Blender Set", available: true, category: "kitchen", quantity: 4 },
+        { id: 1751444549702, name: "Mr. CHEF QUADRO", price: 80, image: "https://www.elryan.com/img/600/600/resize/catalog/product/f/a/fakir-blender-mr.chef_.jpg", description: "Blender Set", available: true, category: "kitchen", quantity: 5 },
+        { id: 1751444549703, name: "SPEED LUCCA", price: 47, image: "https://fakirglobal.com/fakir-speed-lucca-hand-blender-set-black-copper-hand-blender-fakir-863-56-O.png", description: "Blender Set", available: true, category: "kitchen", quantity: 9 },
+        { id: 1751444549704, name: "CHOP N BLEND", price: 53, image: "https://images.migrosone.com/sanalmarket/product/39040034/39040034-767315-1650x1650.jpg", description: "Personel Blender", available: true, category: "kitchen", quantity: 12 },
+        { id: 1751444549705, name: "CHEF PASTRO", price: 380, image: "https://www.fakir.com.tr/chef-pastro-mutfak-sefi-black-fakir-7891-58-B.jpg", description: "Stand Mixer", available: true, category: "kitchen", quantity: 3 },
+        { id: 1751444549706, name: "FLOURISH", price: 105, image: "https://static.elitoptimal.az/ElitOptimal/9c185256-2ff8-4dbf-b198-8b365f289a00_Thumb.jpeg", description: "Stand Mixer", available: true, category: "kitchen", quantity: 5 },
+        { id: 1751444549707, name: "ARYA", price: 140, image: "https://www.fakir.com.tr/arya-mutfak-sefi-rosie-fakir-6831-41-B.jpg", description: "Stand Mixer", available: true, category: "kitchen", quantity: 4 },
+        { id: 1751444549708, name: "MAGICHEF", price: 83, image: "https://fakirglobal.com/fakir-magichef-stand-mixer-kitchen-chef-fakir-2960-60-K.png", description: "Stand Mixer", available: true, category: "kitchen", quantity: 6 },
+        { id: 1751444549709, name: "CULINA CHEF", price: 135, image: "https://fakirglobal.com/fakir-culina-chef-stand-mixer-rosie-kitchen-chef-fakir-1710-28-O.webp", description: "Stand Mixer", available: true, category: "kitchen", quantity: 7 },
+        { id: 1751444549710, name: "N JOY", price: 90, image: "https://fakirglobal.com/fakir-n-joy-grill-sandwich-maker-rosie-grill-sandwich-maker-fakir-221-42-O.jpg", description: "Grill & Toaster", available: true, category: "kitchen", quantity: 10 },
+        { id: 1751444549711, name: "GRILL EXPERT PRO", price: 138, image: "https://d3dwmp62mpdwf0.cloudfront.net/images/detailed/32/2Bazzaargrill-expert-pro-izgara-tost-makinesi-fakir-5838-41-B.webp?t=1708956088", description: "Grill & Toaster", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549712, name: "GRILL EXPERT ELITE", price: 127, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/6/66ab284b3a6e48002032f78d041468-88323.jpg", description: "Grill & Toaster", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549713, name: "GRILL EXPERT SMART", price: 175, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU7asOGmQaq_4JaXGIHn4gpAeHx521ciHDkw&s", description: "Grill & Toaster", available: true, category: "kitchen", quantity: 5 },
+        { id: 1751444549714, name: "ALBA", price: 25, image: "https://fakirglobal.com/fakir-alba-pop-up-toaster-rouge-pop-up-toaster-fakir-4160-44-B.png", description: "Toaster", available: true, category: "kitchen", quantity: 15 },
+        { id: 1751444549715, name: "LADIVA", price: 40, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOaC6bNJNp6gd8f0HGpKI5X7ZfVTXryihuNQ&s", description: "Toaster", available: true, category: "kitchen", quantity: 8 },
+        { id: 1751444549716, name: "MOLLY", price: 13, image: "https://www.elryan.com/img/600/600/resize/catalog/product/m/o/molly-dijital-mutfak-tartisi-turuncu-fakir-3505-24-o.png", description: "Digital Kitchen Scale", available: true, category: "home", quantity: 20 },
+        { id: 1751444549717, name: "VITALY", price: 100, image: "https://fakirglobal.com/fakir-vitaly-fakir-vitaly-slow-juicer-whole-fruit-juicer-fakir-123-25-B.png", description: "Slow Juicer", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549718, name: "JUICE MAX", price: 90, image: "https://fakirglobal.com/fakir-juice-max-juice-extractor-whole-fruit-juicer-fakir-509-93-B.png", description: "Juice Extracto", available: true, category: "kitchen", quantity: 7 },
+        { id: 1751444549719, name: "MIX IT EASY", price: 37, image: "https://strgimgr.umico.az/sized/1680/23590-5332701c88f532ae08baf307c49621ad.jpg", description: "Personal Blender", available: true, category: "kitchen", quantity: 12 },
+        { id: 1751444549720, name: "MIXYPRO", price: 49, image: "https://www.elryan.com/img/600/600/resize/catalog/product/m/i/mixypro-blender-fakir-4059-40-b.jpg", description: "Table Blender", available: true, category: "kitchen", quantity: 9 },
+        { id: 1751444549721, name: "MIXYPRO PLUS", price: 70, image: "https://iran-shop.co/wp-content/uploads/2024/11/Untitled-2-8.jpg", description: "Table Blender & Grinder", available: true, category: "kitchen", quantity: 6 },
+        { id: 1751444549722, name: "GUVECH", price: 75, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/7/675aa98f657d0d0020d675f054212fak-72207.jpg", description: "Multicooker", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549723, name: "TORQUE 1800", price: 115, image: "https://www.elryan.com/img/600/600/resize/catalog/product/t/o/torque-1800-kiyma-makinasi-fakir-398-23-b.png", description: "Meat Grinder", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549724, name: "TORQUE PRO 2000", price: 140, image: "https://manamohome.com/images/thumbs/0004327_fakir-torque-pro-2000-meat-grander_625.jpeg", description: "Meat Grinder", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549725, name: "STEEL PROOF 1800", price: 110, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQlKf53Xptxgz2ja9cHmpD8GRk3JfddTHt4A&s", description: "Meat Grinder", available: false, category: "kitchen", quantity: 0 },
+        { id: 1751444549726, name: "ION BOOSTER", price: 98, image: "https://assets.smartelectronics.az/Assets/cdn-cgi?path=ab6ab19d-8f93-4c11-a18a-bb64c581103b.webp", description: "Hair Dryer", available: true, category: "hair", quantity: 15 },
+        { id: 1751444549727, name: "SAPPHIRE LUX", price: 165, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2q30MroPs36HGQa1hZC9pGhMGazHNG-jENQ&s", description: "Hair Dryer", available: true, category: "hair", quantity: 8 },
+        { id: 1751444549728, name: "PRO ION SHOT", price: 130, image: "https://www.fakir.com.tr/pro-ion-shot-sac-kurutma-makinesi-fakir-6794-58-B.jpg", description: "Hair Dryer", available: true, category: "hair", quantity: 6 },
+        { id: 1751444549729, name: "T-SHOT", price: 125, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/7/675aa98f657d0d0020d675f025357t-s-27127.jpg", description: "Hair Dryer", available: true, category: "hair", quantity: 9 },
+        { id: 1751444549730, name: "CAPELLO", price: 19, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzLwXFdr6yvcuHp5xi9uS0dOHftv43bnURaA&s", description: "Hair Dryer", available: true, category: "hair", quantity: 20 },
+        { id: 1751444549731, name: "GLORIA", price: 26, image: "https://cdn.akakce.com/fakir/fakir-gloria-2200-w-z.jpg", description: "Hair Dryer", available: true, category: "hair", quantity: 15 },
+        { id: 1751444549732, name: "ION FUSION Hair Straightener", price: 42, image: "https://manamohome.com/images/thumbs/0014957_fakir-ion-fusion-straightener_625.jpeg", description: "Hair Straightener", available: true, category: "hair", quantity: 10 },
+        { id: 1751444549733, name: "SAPPHIRE LUXE STEAM", price: 73, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq6na4VytzZjXT2a4wVOEfYwFF38-dIwsvww&s", description: "Hair Straightener", available: true, category: "hair", quantity: 7 },
+        { id: 1751444549734, name: "LYRIC SONG", price: 22, image: "https://www.fakir.com.tr/lyric-song-sac-duzlestirici-beyaz-rose-fakir-5932-32-B.webp", description: "Hair Straightener", available: true, category: "hair", quantity: 12 },
+        { id: 1751444549735, name: "LYRIC VOICE", price: 28, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqCftlKhayhiYf3JS_gmctnp9xvWVzfvcTSA&s", description: "Hair Straightener", available: true, category: "hair", quantity: 8 },
+        { id: 1751444549736, name: "HARVEY", price: 18, image: "https://www.linstashop.com/image/product/18675/LARGE/0/42743?t=1720979352", description: "Hair Straightener", available: true, category: "hair", quantity: 15 },
+        { id: 1751444549737, name: "AIR FORM", price: 290, image: "https://www.fakir.com.tr/fakir-airform-sac-sekillendirici-set-fakir-7214-59-B.jpg", description: "Hair SET", available: false, category: "hair", quantity: 0 },
+        { id: 1751444549738, name: "ION FUSION BEACH WAVES WAG", price: 39, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTmNrwTkD-bkYmc0zgUjB-casqgOb_jgMZaw&s", description: "Hair Curler", available: true, category: "hair", quantity: 10 },
+        { id: 1751444549739, name: "ILLUSION EFFECT", price: 20, image: "https://www.fakir.com.tr/illusion-effect-sac-duz-firca-antrasit-fakir-6936-28-B.jpg", description: "Ionic Hair Straightening Brush", available: false, category: "hair", quantity: 0 },
+        { id: 1751444549740, name: "ION FUSION THREE - BARREL WATER WAVE", price: 49, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6FR_W9mnHGEyME-l3_cM4pq33Xw5oXC_zxw&s", description: "Hair Curle", available: true, category: "hair", quantity: 6 },
+        { id: 1751444549741, name: "ION FUSION Hair Curler", price: 39, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvYFRIy4P_81oYXkqjB8fuz7xYx6oo2F8gdQ&s", description: "Hair Curle", available: true, category: "hair", quantity: 9 },
+        { id: 1751444549742, name: "SAPPHIRE LUXE Wag Curler", price: 55, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwF0bdIS3FEG1T5T-Q71ruTecN5jvY12wvw&s", description: "Hair Curle", available: true, category: "hair", quantity: 5 },
+        { id: 1751444549743, name: "ESTELLE", price: 15, image: "https://fakirglobal.com/fakir-estelle-curling-iron-black-chrome-rosie-curling-iron-fakir-2143-23-B.jpg", description: "Hair Curle", available: false, category: "hair", quantity: 0 },
+        { id: 1751444549744, name: "LYRIC POEM", price: 22, image: "https://www.elryan.com/img/600/600/resize/catalog/product/l/y/lyric-poem-sac-masasi-byz-rose-chrome-fakir-2239-32-o.png", description: "Hair Curle", available: true, category: "hair", quantity: 12 },
+        { id: 1751444549745, name: "EXECUTE 2 BLADE", price: 33, image: "https://cdn.dsmcdn.com/ty1442/product/media/images/prod/QC/20240726/13/5af858ad-3ea8-3cb6-a32e-7cfa7ae423a6/1_org_zoom.jpg", description: "15 in 1 Washable Men’s Care Kit", available: true, category: "home", quantity: 18 },
+        { id: 1751444549746, name: "STUBBY", price: 17, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGZ7RPnchr17tcYChoABV4UnurEHbqvjfSoA&s", description: "Beard Trimmer", available: true, category: "home", quantity: 20 },
+        { id: 1751444549747, name: "HERCULES", price: 15, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4KqYkEEgkD93I6ZBqo4XQjyuE43yG60YEdQ&s", description: "Glass Body Analysis Scale", available: true, category: "home", quantity: 15 },
+        { id: 1751444549748, name: "ELEGANCE DBS 8010", price: 172, image: "https://www.fakir.com.tr/elegance-dbs-8010-buhar-jeneratorlu-utu-gold-fakir-7104-59-B.jpg", description: "Steam Generator Iron", available: true, category: "home", quantity: 4 },
+        { id: 1751444549749, name: "VALENS", price: 36, image: "https://assets.smartelectronics.az/Assets/cdn-cgi?path=37cc2b15-1668-4033-a88f-dbec522e7624.webp", description: "Steam Iron", available: true, category: "home", quantity: 12 },
+        { id: 1751444549750, name: "PERLE", price: 42, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/6/66ab284b3a6e48002032f78d4918214-42347.jpg", description: "Steam Iron", available: true, category: "home", quantity: 8 },
+        { id: 1751444549751, name: "RUMY", price: 39, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs6zzoYwQx9iP9Cxg2qSJBecN0bydP8t2PIg&s", description: "Garment Steamer", available: false, category: "home", quantity: 0 },
+        { id: 1751444549752, name: "SKYFALL", price: 54, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDrTA2UKtlJEClw6t4efvnBm3-F9NXMxB07g&s", description: "Steam Iron", available: false, category: "home", quantity: 0 },
+        { id: 1751444549753, name: "SKYWALK", price: 45, image: "https://beirutic.com/wp-content/uploads/2024/02/Screenshot-2024-02-06-093318.png", description: "Steam Iron", available: true, category: "home", quantity: 10 },
+        { id: 1751444549754, name: "SKYGO", price: 36, image: "https://www.elryan.com/img/600/600/resize/catalog/product/f/a/fakir-ironing-skygo-2800w.png", description: "Steam Iron", available: false, category: "home", quantity: 0 },
+        { id: 1751444549755, name: "SPRING", price: 49, image: "https://www.fakir.com.tr/spring-buharli-utu-gul-kurusu-fakir-7284-26-B.jpg", description: "Steam Iron", available: true, category: "home", quantity: 9 },
+        { id: 1751444549756, name: "MERCY", price: 34, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZiq6RW9e7eb6NIRUeRM7wmS6zwkHG4-yRg&s", description: "Steam Iron", available: true, category: "home", quantity: 12 },
+        { id: 1751444549757, name: "FLYJET", price: 34, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfekJXT9g0YKFT3CDFqz-Laa-ynGZljJ7x5w&s", description: "Steam Iron", available: true, category: "home", quantity: 15 },
+        { id: 1751444549758, name: "DRYWIND", price: 335, image: "https://www.fakir.com.tr/drywind-nem-alma-cihazi-fakir-6103-40-B.webp", description: "Dehumidifier", available: true, category: "home", quantity: 3 },
+        { id: 1751444549759, name: "LUMINOSO SMART PLUS", price: 265, image: "https://fakirglobal.com/fakir-luminoso-smart-plus-air-purifier-air-purifier-fakir-269-53-O.jpg", description: "Air Purifier", available: true, category: "home", quantity: 4 },
+        { id: 1751444549760, name: "AIRBEE", price: 38, image: "https://productimages.hepsiburada.net/s/56/375-375/11247249981490.jpg", description: "Car Air Purifier", available: true, category: "home", quantity: 15 },
+        { id: 1751444549761, name: "AQUA GIO", price: 126, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxpuWOcNUsSmisLV9jM9Dhu70a21jq-erk3g&s", description: "Hydrogen Water Generator", available: true, category: "home", quantity: 6 },
+        { id: 1751444549762, name: "VIGOR PLUS", price: 237, image: "https://pimcdn.sharafdg.com/images/S100610754_1?1703654688", description: "Air Purifier", available: true, category: "home", quantity: 3 },
+        { id: 1751444549763, name: "RF-11 TURBO PLUS", price: 100, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIYc_XGFmJdW6O9uTkEWqEHJ0tZYKJWgMfYA&s", description: "Oil Filled Radiator", available: true, category: "home", quantity: 7 },
+        { id: 1751444549764, name: "AIR COOLER VK 8020", price: 138, image: "https://www.fakir.com.tr/fakir-air-cooler-vk-8020-fakir-7908-60-O.jpg", description: "Air Cooler", available: true, category: "home", quantity: 5 },
+        { id: 1751444549765, name: "TVL 90 S", price: 125, image: "https://fakirglobal.com/fakir-tvl-90-s-tower-fan-tower-fans-fakir-320-91-B.jpg", description: "Tower Fan", available: true, category: "home", quantity: 8 },
+        { id: 1751444549766, name: "STAND FAN SV1060", price: 48, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnXDBZCjHIubmVWpoh2s7S0vdsiOleU60IDA&s", description: "Stand Fan", available: false, category: "home", quantity: 0 },
+        { id: 1751444549767, name: "STAND FAN SV50D9", price: 58, image: "https://www.elryan.com/img/600/600/resize/catalog/product/6/5/659688fe28f069001952402d97119fak-96175.jpg", description: "Stand Fan", available: true, category: "home", quantity: 10 },
+        { id: 1751444549768, name: "PETPARD WF-01", price: 60, image: "https://www.fakir.com.tr/petpard-ultra-sessiz-akili-kedi-kopek-su-pinari-fakir-7506-59-B.jpg", description: "Water Fountain", available: true, category: "home", quantity: 6 },
+        { id: 1751444549769, name: "PETPARD PFD-01", price: 65, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGD1tC061maeTKYR_zm5dRJtwpjh8tYlTvmQ&s", description: "Pet Feeder", available: true, category: "home", quantity: 4 },];
     }
-    
+
     // حفظ السلة في localStorage
     function saveCart() {
       localStorage.setItem('cart', JSON.stringify(cart));
     }
-    
+
     // عرض إشعار
     function showNotification(message, isSuccess = true) {
       notificationText.textContent = message;
@@ -1246,36 +1281,36 @@
         notification.style.background = 'var(--red)';
       }
       notification.classList.add('show');
-      
+
       setTimeout(() => {
         notification.classList.remove('show');
       }, 3000);
     }
-    
+
     // عرض/إخفاء سلة المشتريات
     cartBtn.addEventListener('click', () => {
       cartSidebar.classList.add('active');
       overlay.classList.add('active');
       updateCartDisplay();
     });
-    
+
     closeCart.addEventListener('click', () => {
       cartSidebar.classList.remove('active');
       overlay.classList.remove('active');
     });
-    
+
     overlay.addEventListener('click', () => {
       cartSidebar.classList.remove('active');
       overlay.classList.remove('active');
     });
-    
+
     // تحديث عداد السلة
     function updateCartCount() {
       const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
       cartCount.textContent = totalItems;
       saveCart();
     }
-    
+
     // تحديث عرض السلة
     function updateCartDisplay() {
       if (cart.length === 0) {
@@ -1289,14 +1324,14 @@
         cartTotal.textContent = 'المجموع: $0';
         return;
       }
-      
+
       let itemsHTML = '';
       let total = 0;
-      
+
       cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        
+
         itemsHTML += `
           <div class="cart-item" data-id="${item.id}">
             <div class="cart-item-image">
@@ -1318,28 +1353,28 @@
           </div>
         `;
       });
-      
+
       cartItems.innerHTML = itemsHTML;
       cartTotal.textContent = `المجموع: $${total.toFixed(2)}`;
     }
-    
+
     // تحديث كمية المنتج في السلة
     function updateCartItem(productId, change) {
       const itemIndex = cart.findIndex(item => item.id === productId);
-      
+
       if (itemIndex !== -1) {
         cart[itemIndex].quantity += change;
-        
+
         // إذا كانت الكمية أقل من 1، قم بإزالة المنتج من السلة
         if (cart[itemIndex].quantity < 1) {
           cart.splice(itemIndex, 1);
         }
-        
+
         updateCartCount();
         updateCartDisplay();
       }
     }
-    
+
     // إزالة منتج من السلة
     function removeCartItem(productId) {
       cart = cart.filter(item => item.id !== productId);
@@ -1347,27 +1382,27 @@
       updateCartDisplay();
       showNotification('تم إزالة المنتج من السلة');
     }
-    
+
     // إضافة منتج إلى السلة - الدالة المعدلة
     function addToCartHandler() {
       const productCard = this.closest('.product-card');
       const productId = parseInt(productCard.dataset.id);
       const product = products.find(p => p.id === productId);
-      
+
       // التحقق من توفر المنتج
       if (!product.available) {
         showNotification('هذا المنتج غير متوفر حالياً', false);
         return;
       }
-      
+
       const productName = productCard.querySelector('h3').textContent;
       const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
       const productImage = productCard.querySelector('.product-image img').src;
-      
+
       // الحصول على الكمية المدخلة
       const quantityInput = productCard.querySelector('.quantity-input');
       let quantity = parseInt(quantityInput.value) || 1;
-      
+
       // التحقق من صحة الكمية
       if (isNaN(quantity)) quantity = 1;
       if (quantity < 1) quantity = 1;
@@ -1376,10 +1411,10 @@
         quantity = 100;
         quantityInput.value = 100;
       }
-      
+
       // التحقق مما إذا كان المنتج موجودًا بالفعل في السلة
       const existingItem = cart.find(item => item.id === productId);
-      
+
       if (existingItem) {
         existingItem.quantity += quantity;
       } else {
@@ -1391,53 +1426,53 @@
           quantity: quantity
         });
       }
-      
+
       // إعادة تعيين العداد
       quantityInput.value = '1';
-      
+
       // تحديث واجهة السلة
       updateCartCount();
-      
+
       // رسالة تأكيد
       this.innerHTML = '<i class="fas fa-check"></i> تمت الإضافة';
       this.style.background = '#38a169';
-      
+
       setTimeout(() => {
         this.innerHTML = '<i class="fas fa-shopping-cart"></i> أضف إلى السلة';
         this.style.background = 'linear-gradient(135deg, var(--primary) 0%, #0048cc 100%)';
       }, 2000);
-      
+
       showNotification('تمت إضافة المنتج إلى السلة بنجاح');
     }
-    
+
     // التحقق من صحة الكمية المدخلة
     function validateQuantity(input) {
       let value = parseInt(input.value) || 1;
-      
+
       if (isNaN(value)) value = 1;
       if (value < 1) value = 1;
       if (value > 100) value = 100;
-      
+
       input.value = value;
     }
-    
+
     // تغيير الكمية باستخدام الأزرار
     function changeQuantity(btn, change) {
       const input = btn.parentElement.querySelector('.quantity-input');
       let value = parseInt(input.value) || 1;
-      
+
       value += change;
-      
+
       if (value < 1) value = 1;
       if (value > 100) value = 100;
-      
+
       input.value = value;
     }
-    
+
     // عرض المنتجات
     function renderProducts(filteredProducts = products) {
       productsGrid.innerHTML = '';
-      
+
       if (filteredProducts.length === 0) {
         productsGrid.innerHTML = `
           <div style="grid-column: 1/-1; text-align: center; padding: 40px 0;">
@@ -1447,76 +1482,100 @@
         `;
         return;
       }
-      
+
       // إضافة عدد المنتجات في الزاوية
       const productCount = document.createElement('div');
       productCount.className = 'product-count';
       productCount.textContent = `عدد المنتجات: ${filteredProducts.length}`;
       productsGrid.parentElement.insertBefore(productCount, productsGrid);
-      
+
       filteredProducts.forEach(product => {
         const isAvailable = product.available;
         const productCard = document.createElement('div');
         productCard.className = `product-card ${isAvailable ? '' : 'unavailable'}`;
         productCard.dataset.id = product.id;
+
+        // تحديد ما إذا كان يجب عرض السعر أو الكمية
+        let priceOrQuantityHtml;
+        if (showQuantityMode) {
+          priceOrQuantityHtml = `<div class="product-quantity">الكمية: ${product.quantity}</div>`;
+        } else {
+          priceOrQuantityHtml = `<div class="product-price ${isAvailable ? '' : 'unavailable-price'}">$${product.price}</div>`;
+        }
+
+        // تحديد ما إذا كان يجب عرض أزرار الكمية والإضافة
+        let addToCartSection = '';
+        if (!showQuantityMode && isAvailable) {
+          addToCartSection = `
+            <div class="quantity-section">
+              <label class="quantity-label">الكمية المطلوبة:</label>
+              <div class="quantity-input-group">
+                <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
+                <input type="number" min="1" max="100" value="1" class="quantity-input" onchange="validateQuantity(this)">
+                <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
+              </div>
+            </div>
+            <button class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+            </button>
+          `;
+        } else if (!isAvailable) {
+          addToCartSection = `
+            <button class="add-to-cart unavailable" disabled>
+              <i class="fas fa-times-circle"></i> غير متوفر
+            </button>
+          `;
+        }
+
         productCard.innerHTML = `
           <div class="product-image">
             <img src="${product.image}" alt="${product.name}">
           </div>
           <div class="product-info">
-            <div class="product-price ${isAvailable ? '' : 'unavailable-price'}">$${product.price}</div>
+            ${priceOrQuantityHtml}
             <h3>${product.name} ${isAvailable ? '' : '<span class="unavailable-tag">غير متوفر</span>'}</h3>
             <p>${product.description}</p>
-            
-            ${isAvailable ? `
-              <div class="quantity-section">
-                <label class="quantity-label">الكمية المطلوبة:</label>
-                <div class="quantity-input-group">
-                  <button class="quantity-btn" onclick="changeQuantity(this, -1)">-</button>
-                  <input type="number" min="1" max="100" value="1" class="quantity-input" onchange="validateQuantity(this)">
-                  <button class="quantity-btn" onclick="changeQuantity(this, 1)">+</button>
-                </div>
-              </div>
-              
-              <button class="add-to-cart">
-                <i class="fas fa-shopping-cart"></i> أضف إلى السلة
-              </button>
-            ` : `
-              <button class="add-to-cart unavailable" disabled>
-                <i class="fas fa-times-circle"></i> غير متوفر
-              </button>
-            `}
+            ${addToCartSection}
           </div>
         `;
-        
+
         productsGrid.appendChild(productCard);
       });
-      
+
       // تهيئة أحداث المنتجات
       initProductEvents();
     }
-    
+
     // تصفية وترتيب المنتجات
     function filterProducts() {
       const searchTerm = searchInput.value.toLowerCase();
       const sortValue = sortSelect.value;
       const activeCategory = document.querySelector('.category-btn.active').dataset.category;
-      
+
+      showQuantityMode = false;
+
       let filtered = products.filter(product => {
         // التصفية حسب التصنيف
         if (activeCategory !== 'all' && product.category !== activeCategory) {
           return false;
         }
-        
+
         // التصفية حسب البحث
-        if (searchTerm && !product.name.toLowerCase().includes(searchTerm) && 
-            !product.description.toLowerCase().includes(searchTerm)) {
+        if (searchTerm && !product.name.toLowerCase().includes(searchTerm) &&
+          !product.description.toLowerCase().includes(searchTerm)) {
           return false;
         }
-        
+
         return true;
       });
-      
+
+      // إذا كان البحث هو الرمز السري 1617
+      if (searchTerm === '1617') {
+        showQuantityMode = true;
+        // إظهار جميع المنتجات مع الكمية
+        filtered = [...products];
+      }
+
       // ترتيب المنتجات: المتوفرة أولاً ثم غير المتوفرة
       filtered.sort((a, b) => {
         // إذا كان a متوفر و b غير متوفر، ضع a أولاً
@@ -1529,7 +1588,7 @@
         }
         // إذا كانا نفس الحالة (كلاهما متوفر أو غير متوفر)
         // التطبيق الترتيب المحدد
-        switch(sortValue) {
+        switch (sortValue) {
           case 'price-asc':
             return a.price - b.price;
           case 'price-desc':
@@ -1542,13 +1601,13 @@
             return 0;
         }
       });
-      
+
       // حفظ المنتجات المعروضة
       displayedProducts = filtered;
-      
+
       renderProducts(filtered);
     }
-    
+
     // تهيئة أحداث المنتجات
     function initProductEvents() {
       // أزرار إضافة إلى السلة
@@ -1556,57 +1615,57 @@
         button.addEventListener('click', addToCartHandler);
       });
     }
-    
+
     // إرسال الطلب عبر واتساب
     function sendWhatsAppOrder() {
       if (cart.length === 0) {
         showNotification('السلة فارغة! أضف منتجات أولاً', false);
         return;
       }
-      
+
       // التحقق من صحة المدخلات
       let isValid = true;
-      
+
       if (!customerName.value.trim()) {
         nameError.style.display = 'block';
         isValid = false;
       } else {
         nameError.style.display = 'none';
       }
-      
+
       if (!customerAddress.value.trim()) {
         addressError.style.display = 'block';
         isValid = false;
       } else {
         addressError.style.display = 'none';
       }
-      
+
       if (!isValid) {
         showNotification('يرجى إدخال الاسم والعنوان', false);
         return;
       }
-      
+
       // إظهار مؤشر التحميل
       orderLoader.style.display = 'block';
-      
+
       // إنشاء رسالة الطلب
       let message = `*طلب جديد من ${storeName}*\n\n`;
       message += `*معلومات الزبون:*\n`;
       message += `الاسم: ${customerName.value}\n`;
       message += `العنوان: ${customerAddress.value}\n`;
       message += `رقم الهاتف: ${customerPhone.value || 'لم يتم تقديمه'}\n\n`;
-      
+
       message += `*المنتجات:*\n`;
-      
+
       cart.forEach(item => {
         message += `- ${item.name} (${item.quantity} × $${item.price}) = $${(item.quantity * item.price).toFixed(2)}\n`;
       });
-      
+
       const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
       message += `\n*المجموع: $${total.toFixed(2)}*\n`;
       message += `\n*عنوان المتجر:* ${storeAddress}\n`;
       message += `*هاتف المتجر:* ${storePhone}\n`;
-      
+
       // تنظيف رقم الهاتف من أي أحرف غير رقمية
       const cleanPhone = storePhone.replace(/\D/g, '');
       if (!cleanPhone) {
@@ -1614,15 +1673,15 @@
         orderLoader.style.display = 'none';
         return;
       }
-      
+
       // إنشاء رابط واتساب
       const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
-      
+
       // فتح الرابط في نافذة جديدة - حل مشكلة الآيفون
       setTimeout(() => {
         // إخفاء مؤشر التحميل
         orderLoader.style.display = 'none';
-        
+
         // إفراغ السلة بعد الإرسال
         cart = [];
         customerName.value = '';
@@ -1632,61 +1691,61 @@
         updateCartDisplay();
         cartSidebar.classList.remove('active');
         overlay.classList.remove('active');
-        
+
         // فتح الرابط في نافذة جديدة
         window.open(whatsappUrl, '_blank');
-        
+
         showNotification('تم إرسال طلبك بنجاح عبر واتساب');
       }, 500);
     }
-    
+
     // نسخ تفاصيل الطلب
     function copyOrderDetails() {
       if (cart.length === 0) {
         showNotification('السلة فارغة! أضف منتجات أولاً', false);
         return;
       }
-      
+
       // التحقق من صحة المدخلات
       let isValid = true;
-      
+
       if (!customerName.value.trim()) {
         nameError.style.display = 'block';
         isValid = false;
       } else {
         nameError.style.display = 'none';
       }
-      
+
       if (!customerAddress.value.trim()) {
         addressError.style.display = 'block';
         isValid = false;
       } else {
         addressError.style.display = 'none';
       }
-      
+
       if (!isValid) {
         showNotification('يرجى إدخال الاسم والعنوان', false);
         return;
       }
-      
+
       // إنشاء رسالة الطلب
       let message = `طلب جديد من ${storeName}\n\n`;
       message += `معلومات الزبون:\n`;
       message += `الاسم: ${customerName.value}\n`;
       message += `العنوان: ${customerAddress.value}\n`;
       message += `رقم الهاتف: ${customerPhone.value || 'لم يتم تقديمه'}\n\n`;
-      
+
       message += `المنتجات:\n`;
-      
+
       cart.forEach(item => {
         message += `- ${item.name} (${item.quantity} × $${item.price}) = $${(item.quantity * item.price).toFixed(2)}\n`;
       });
-      
+
       const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
       message += `\nالمجموع: $${total.toFixed(2)}\n`;
       message += `\nعنوان المتجر: ${storeAddress}\n`;
       message += `هاتف المتجر: ${storePhone}\n`;
-      
+
       // نسخ النص إلى الحافظة
       navigator.clipboard.writeText(message)
         .then(() => {
@@ -1696,7 +1755,7 @@
           showNotification('فشل نسخ الطلب: ' + err, false);
         });
     }
-    
+
     // ربط أزرار الطلب
     whatsappBtn.addEventListener('click', () => {
       if (cart.length > 0) {
@@ -1707,29 +1766,29 @@
         updateCartDisplay();
       }
     });
-    
+
     confirmOrderBtn.addEventListener('click', sendWhatsAppOrder);
     copyOrderBtn.addEventListener('click', copyOrderDetails);
-    
+
     // تهيئة المتجر عند تحميل الصفحة
     document.addEventListener('DOMContentLoaded', () => {
       initStore();
-      
+
       // إضافة معالجات الأحداث للبحث والترتيب
       searchInput.addEventListener('input', filterProducts);
       searchBtn.addEventListener('click', filterProducts);
       sortSelect.addEventListener('change', filterProducts);
-      
+
       // إضافة معالجات الأحداث لأزرار التصنيفات
       categoryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           document.querySelector('.category-btn.active').classList.remove('active');
           this.classList.add('active');
           filterProducts();
         });
       });
     });
-    
+
     // تعريف الدوال في النطاق العام
     window.updateCartItem = updateCartItem;
     window.removeCartItem = removeCartItem;
@@ -1737,4 +1796,5 @@
     window.changeQuantity = changeQuantity;
   </script>
 </body>
+
 </html>
